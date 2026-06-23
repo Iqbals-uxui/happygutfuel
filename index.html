@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyGutFuel — The Science-Backed Guide to Microbiome Performance</title>
+  <meta name="description" content="Evidence-based gut health recommendations — bio-fuels and digestive catalysts genuinely worth your money in 2026." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #f7f4ef;
+      --bg-card:      #ffffff;
+      --bg-secondary: #f0ebe2;
+      --text:         #111926;
+      --text-muted:   #5c6470;
+      --text-faint:   #9098a4;
+      --accent:       #c6822b;
+      --accent-hover: #a3671e;
+      --accent-light: #fbf6ee;
+      --border:       #e6e2da;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body:    'Plus Jakarta Sans', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 2px 16px rgba(0,0,0,0.03);
+      --shadow-md: 0 8px 28px rgba(0,0,0,0.06);
+    }
+
+    [data-theme="dark"] {
+      --bg:           #0a0f18;
+      --bg-card:      #121a26;
+      --bg-secondary: #162030;
+      --text:         #f4f6f9;
+      --text-muted:   #8a95a5;
+      --text-faint:   #5a6575;
+      --accent:       #dba047;
+      --accent-hover: #e5b367;
+      --accent-light: #1c2635;
+      --border:       #1e293b;
+      --shadow-sm: 0 2px 16px rgba(0,0,0,0.15);
+      --shadow-md: 0 8px 28px rgba(0,0,0,0.25);
+    }
+
+    html { scroll-behavior: smooth; background: var(--bg); }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a    { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: var(--font-body); outline: none; }
+    img  { display: block; max-width: 100%; height: auto; }
+
+
+    /* ── DISCLOSURE BANNER ────────────────────────────────── */
+    .disclosure-banner {
+      background: var(--accent-light);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .disclosure-banner strong { color: var(--accent); }
+
+
+    /* ── NAVIGATION ───────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 239, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    [data-theme="dark"] header { background: rgba(10, 15, 24, 0.9); }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover      { color: var(--text); }
+    .nav-links a.active     { color: var(--accent); font-weight: 600; }
+
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { color: var(--text); border-color: var(--text-muted); }
+    .theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+
+    /* ── POST HERO ────────────────────────────────────────── */
+    .post-hero {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 20px 28px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    .meta-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+      font-family: var(--font-heading);
+    }
+
+    .post-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .author-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .author-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+    }
+    .author-info p    { font-size: 0.9rem;  font-weight: 600; color: var(--text); }
+    .author-info span { font-size: 0.8rem;  color: var(--text-muted); }
+
+
+    /* ── MAIN LAYOUT: article LEFT + sidebar RIGHT ────────── */
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 56px;
+    }
+
+    /* Intro paragraph */
+    .article-body p.intro {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin: 28px 0 24px;
+      line-height: 1.75;
+    }
+
+    /* Live result count */
+    .result-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-count strong { color: var(--text); }
+
+
+    /* ── PRODUCT CARDS ────────────────────────────────────── */
+    .product-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s;
+    }
+    .product-node.hidden { display: none; }
+    .product-node:hover  { box-shadow: var(--shadow-md); }
+
+    .product-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .product-number {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-light);
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .product-title-area { flex: 1; }
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .product-brand { font-size: 0.83rem; color: var(--text-muted); font-weight: 500; }
+
+    /* 3-column specs strip */
+    .quick-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      background: var(--bg);
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    .spec-item   { text-align: center; }
+    .spec-label  {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+    .spec-val { font-weight: 700; color: var(--text); font-size: 0.88rem; }
+
+    /* Description */
+    .product-desc {
+      margin-bottom: 22px;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Pro / Con two-column grid */
+    .pro-con-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .pc-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .pc-box h5 {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .pc-box ul { list-style: none; font-size: 0.88rem; }
+    .pc-box li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .pc-box li:last-child { margin-bottom: 0; }
+    .pro-box h5          { color: #2d7a50; }
+    .pro-box li::before  { content: "✓"; position: absolute; left: 0; color: #2d7a50; font-weight: bold; }
+    .con-box h5          { color: #a63a3a; }
+    .con-box li::before  { content: "✕"; position: absolute; left: 0; color: #a63a3a; font-weight: bold; }
+
+    /* Price + buy button row */
+    .affiliate-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .price-tag {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .price-tag span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      display: block;
+      line-height: 1.2;
+    }
+    .btn-affiliate {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      box-shadow: 0 4px 14px rgba(198,130,43,0.2);
+      transition: all 0.2s;
+    }
+    .btn-affiliate:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+    /* Empty state */
+    #no-results {
+      text-align: center;
+      padding: 40px;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      color: var(--text-muted);
+      display: none;
+      font-size: 0.95rem;
+    }
+
+
+    /* ── SIDEBAR ──────────────────────────────────────────── */
+    .sidebar { position: relative; }
+
+    .sidebar-sticky {
+      position: sticky;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .widget-title {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    /* Search input */
+    .search-input {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus { outline: none; border-color: var(--accent); }
+
+    /* Category pills */
+    .category-pills { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; }
+    .category-pills button {
+      padding: 7px 13px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      font-size: 0.83rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .category-pills button:hover,
+    .category-pills button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Newsletter widget */
+    .newsletter-widget {
+      background: var(--accent-light);
+      border-color: transparent;
+      box-shadow: none;
+    }
+    .newsletter-widget .widget-title { color: var(--accent); }
+    .newsletter-widget > p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+    .newsletter-form input {
+      width: 100%;
+      padding: 11px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      font-family: inherit;
+      margin-bottom: 8px;
+      outline: none;
+      font-size: 0.88rem;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input:focus { border-color: var(--accent); }
+    .newsletter-form button {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.2s;
+      font-size: 0.88rem;
+    }
+    .newsletter-form button:hover { background: var(--accent-hover); }
+
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      font-size: 0.82rem;
+      color: var(--text-faint);
+    }
+    footer a { color: var(--text-muted); transition: color 0.2s; }
+    footer a:hover { color: var(--accent); }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .main-layout          { grid-template-columns: 1fr; gap: 32px; }
+      .sidebar              { order: -1; }
+      .sidebar-sticky       { position: static; }
+      .pro-con-grid         { grid-template-columns: 1fr; }
+      .nav-links            { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .post-hero            { padding: 40px 20px 20px; }
+      .affiliate-action     { flex-direction: column; align-items: flex-start; }
+      .btn-affiliate        { width: 100%; justify-content: center; }
+      .quick-specs          { grid-template-columns: repeat(3, 1fr); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── LEGAL AFFILIATE DISCLOSURE ─────────────────────────── -->
+  <div class="disclosure-banner">
+    <strong>Advertiser Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases.
+    When you click links on our site and make a purchase, we may receive an affiliate commission at no extra cost to you.
+  </div>
+
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">HappyGut<span>Fuel</span>.</a>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Bio-Fuels</a></li>
+        <li><a href="#">Microbiome Deep Dives</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ── POST HERO ──────────────────────────────────────────── -->
+  <div class="post-hero">
+    <a href="#" class="back-link">← All Posts</a>
+    <span class="meta-tag">✦ Microbiome Optimization</span>
+    <h1>The Bio-Fuels and Digestive Catalysts Truly Worth Your Money in 2026</h1>
+    <div class="author-strip">
+      <div class="author-img">HGF</div>
+      <div class="author-info">
+        <p>HappyGutFuel Editorial</p>
+        <span>Updated June 2026 &middot; 8 min read</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── MAIN LAYOUT ────────────────────────────────────────── -->
+  <div class="main-layout">
+
+    <!-- LEFT: ARTICLE + PRODUCT CARDS ──────────────────────── -->
+    <article class="article-body">
+
+      <p class="intro">
+        The health industry sells flashy wellness shakes packed with synthetic fillers that bloat your GI tract.
+        True biological energy isn't built on stimulants — it's synthesized from an optimised gut barrier.
+        Here are the precise therapeutic compounds genuinely worth the investment.
+      </p>
+
+      <div class="result-count" id="result-count">
+        <strong>3 items</strong> in all categories
+      </div>
+
+      <div id="recommendations">
+
+        <!-- ── CARD 01: KEFIR GRAINS ──────────────────────── -->
+        <article class="product-node" data-category="ferments" data-title="artisanal live culture heirloom kefir grains">
+          <div class="product-header">
+            <div class="product-number">01</div>
+            <div class="product-title-area">
+              <h3 class="product-title">Artisanal Live Culture Heirloom Kefir Grains</h3>
+              <span class="product-brand">Ferments &amp; Probiotics</span>
+            </div>
+          </div>
+
+          <div class="quick-specs">
+            <div class="spec-item">
+              <span class="spec-label">Form Factor</span>
+              <span class="spec-val">Living Grains</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Diversity</span>
+              <span class="spec-val">30+ Strains</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Potency</span>
+              <span class="spec-val">Infinite</span>
+            </div>
+          </div>
+
+          <p class="product-desc">
+            Store-bought liquid probiotic drinks are pasteurised and sit on shelves for weeks, drastically degrading
+            active colony counts. Culturing your own raw milk or coconut kefir using true heirloom grains introduces
+            multi-strain lactic acid bacteria populations that survive stomach acid barriers and actively colonise the
+            intestinal epithelium — something no shelf product can replicate.
+          </p>
+
+          <div class="pro-con-grid">
+            <div class="pc-box pro-box">
+              <h5>Pros</h5>
+              <ul>
+                <li>Infinite batches from a single one-time purchase</li>
+                <li>Superior microbial biodiversity across 30+ live strains</li>
+                <li>Far higher CFU counts than any commercial product</li>
+              </ul>
+            </div>
+            <div class="pc-box con-box">
+              <h5>Cons</h5>
+              <ul>
+                <li>Requires active daily feeding and care cycles</li>
+                <li>Takes 1–2 weeks to establish and stabilise</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="affiliate-action">
+            <div class="price-tag">
+              <span>Estimated Price</span>
+              £18.50
+            </div>
+            <a href="https://amazon.co.uk" target="_blank" rel="noopener nofollow sponsored" class="btn-affiliate">
+              Buy on Amazon →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ── CARD 02: DIGESTIVE ENZYMES ─────────────────── -->
+        <article class="product-node" data-category="enzymes" data-title="advanced high potency vegan digestive enzymes">
+          <div class="product-header">
+            <div class="product-number">02</div>
+            <div class="product-title-area">
+              <h3 class="product-title">Advanced High-Potency Vegan Digestive Enzymes</h3>
+              <span class="product-brand">Digestive Enzymes</span>
+            </div>
+          </div>
+
+          <div class="quick-specs">
+            <div class="spec-item">
+              <span class="spec-label">Key Enzymes</span>
+              <span class="spec-val">Amylase, Lipase</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Target Area</span>
+              <span class="spec-val">Absorption</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dosage</span>
+              <span class="spec-val">1 Pre-Meal</span>
+            </div>
+          </div>
+
+          <p class="product-desc">
+            When the body struggles to disassemble complex carbohydrates and heavier proteins, undigested particles
+            migrate to the lower colon, feeding gas-producing microbes. This targeted broad-spectrum enzyme blend
+            optimises systemic absorption and speeds gastric clearance — particularly effective for anyone transitioning
+            to a higher-fibre or plant-forward diet.
+          </p>
+
+          <div class="pro-con-grid">
+            <div class="pc-box pro-box">
+              <h5>Pros</h5>
+              <ul>
+                <li>Reduces post-meal bloating and brain fog noticeably</li>
+                <li>Broad-spectrum coverage across all macronutrient groups</li>
+                <li>Vegan-derived — suitable for plant-based diets</li>
+              </ul>
+            </div>
+            <div class="pc-box con-box">
+              <h5>Cons</h5>
+              <ul>
+                <li>Capsules are bulky and can be difficult to swallow</li>
+                <li>Requires consistent pre-meal timing for best results</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="affiliate-action">
+            <div class="price-tag">
+              <span>Estimated Price</span>
+              £29.00
+            </div>
+            <a href="https://amazon.co.uk" target="_blank" rel="noopener nofollow sponsored" class="btn-affiliate">
+              Buy on Amazon →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ── CARD 03: PREBIOTIC BLEND ────────────────────── -->
+        <article class="product-node" data-category="fiber" data-title="organic sprouted acacia baobab prebiotic blend">
+          <div class="product-header">
+            <div class="product-number">03</div>
+            <div class="product-title-area">
+              <h3 class="product-title">Organic Sprouted Acacia &amp; Baobab Prebiotic Blend</h3>
+              <span class="product-brand">Prebiotic Fiber</span>
+            </div>
+          </div>
+
+          <div class="quick-specs">
+            <div class="spec-item">
+              <span class="spec-label">Source</span>
+              <span class="spec-val">Acacia Senegal</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Solubility</span>
+              <span class="spec-val">Ultra-Fine</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Ferment</span>
+              <span class="spec-val">Slow (Low-Bloat)</span>
+            </div>
+          </div>
+
+          <p class="product-desc">
+            Flooding a compromised gut with aggressive raw inulin fibre triggers severe cramping. This premium
+            wild-harvested Acacia gum delivers a slow, sustained fermentation profile along the entire intestinal
+            tract, feeding native Akkermansia strains without causing sudden fluid shifts. The baobab co-factor adds
+            a polyphenol profile that supports barrier mucosal integrity.
+          </p>
+
+          <div class="pro-con-grid">
+            <div class="pc-box pro-box">
+              <h5>Pros</h5>
+              <ul>
+                <li>Highly tolerated — minimal bloating even at higher doses</li>
+                <li>Specifically feeds Akkermansia, the barrier-integrity strain</li>
+                <li>Tasteless and dissolves invisibly in any liquid</li>
+              </ul>
+            </div>
+            <div class="pc-box con-box">
+              <h5>Cons</h5>
+              <ul>
+                <li>Higher price per ounce vs cheap psyllium alternatives</li>
+                <li>Results take several weeks of consistent daily use</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="affiliate-action">
+            <div class="price-tag">
+              <span>Estimated Price</span>
+              £32.50
+            </div>
+            <a href="https://amazon.co.uk" target="_blank" rel="noopener nofollow sponsored" class="btn-affiliate">
+              Buy on Amazon →
+            </a>
+          </div>
+        </article>
+
+
+        <!-- Empty state ──────────────────────────────────────── -->
+        <div id="no-results">
+          No bio-fuels match your current filtering criteria. Try a different search term or category.
+        </div>
+
+      </div><!-- /#recommendations -->
+    </article>
+
+
+    <!-- RIGHT: STICKY SIDEBAR ───────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-sticky">
+
+        <!-- Search widget -->
+        <div class="widget">
+          <p class="widget-title">Search Bio-Fuels</p>
+          <input
+            type="text"
+            id="search-bar"
+            class="search-input"
+            placeholder="e.g. Kefir, Fiber, Enzyme..."
+            oninput="filterProducts()"
+          />
+        </div>
+
+        <!-- Category filter widget -->
+        <div class="widget">
+          <p class="widget-title">Filter by Type</p>
+          <ul class="category-pills">
+            <li><button class="active" onclick="setCategory('all', this)">All Bio-Fuels</button></li>
+            <li><button onclick="setCategory('ferments', this)">Ferments &amp; Probiotics</button></li>
+            <li><button onclick="setCategory('enzymes', this)">Digestive Enzymes</button></li>
+            <li><button onclick="setCategory('fiber', this)">Prebiotic Fiber</button></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter widget -->
+        <div class="widget newsletter-widget">
+          <p class="widget-title">Microbiome Intelligence Dispatch</p>
+          <p>We rigorously vet raw powders, specialised enzymes, and active strains that yield genuine metabolic energy ROI.</p>
+          <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+            <input type="email" placeholder="your@email.com" required />
+            <button type="submit">Join Subscribers</button>
+          </form>
+        </div>
+
+      </div>
+    </aside>
+
+  </div><!-- /.main-layout -->
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#">← All Posts</a>
+      <span>© 2026 HappyGutFuel. Affiliate links used throughout.</span>
+    </div>
+  </footer>
+
+
+  <!-- ── JAVASCRIPT ─────────────────────────────────────────── -->
+  <script>
+
+    // ── THEME ─────────────────────────────────────────────────
+    // Always defaults to light. Dark only if user has previously
+    // toggled manually — never follows system dark mode preference.
+    (function () {
+      var saved = localStorage.getItem('hgf-theme');
+      var theme = (saved === 'dark') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      updateIcon();
+    })();
+
+    function toggleTheme() {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = (current === 'dark') ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('hgf-theme', next);
+      updateIcon();
+    }
+
+    function updateIcon() {
+      var icon = document.getElementById('themeIcon');
+      if (!icon) return;
+      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+      } else {
+        icon.innerHTML = [
+          '<circle cx="12" cy="12" r="5"/>',
+          '<line x1="12" y1="1" x2="12" y2="3"/>',
+          '<line x1="12" y1="21" x2="12" y2="23"/>',
+          '<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>',
+          '<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>',
+          '<line x1="1" y1="12" x2="3" y2="12"/>',
+          '<line x1="21" y1="12" x2="23" y2="12"/>',
+          '<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>',
+          '<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+        ].join('');
+      }
+    }
+
+
+    // ── NEWSLETTER ────────────────────────────────────────────
+    // Works on sidebar newsletter form.
+    function handleSubscribe(e) {
+      e.preventDefault();
+      var btn   = e.target.querySelector('button');
+      var input = e.target.querySelector('input');
+      if (!btn || !input) return;
+      btn.textContent = "✓ You're on the list";
+      btn.style.background = '#a3671e';
+      input.disabled = true;
+      btn.disabled   = true;
+    }
+
+
+    // ── PRODUCT FILTER ────────────────────────────────────────
+    var currentCategory = 'all';
+
+    function setCategory(cat, btn) {
+      if (!document.getElementById('recommendations')) return;
+
+      currentCategory = cat;
+
+      // Update active pill
+      var buttons = document.querySelectorAll('.category-pills button');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+      btn.classList.add('active');
+
+      filterProducts();
+
+      // Smooth scroll to result count, offset for sticky header
+      var target = document.getElementById('result-count');
+      var header = document.querySelector('header');
+      if (target && header) {
+        var headerHeight = header.offsetHeight;
+        var targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }
+    }
+
+    function filterProducts() {
+      var searchBar       = document.getElementById('search-bar');
+      var recommendations = document.getElementById('recommendations');
+      if (!searchBar || !recommendations) return;
+
+      var query    = searchBar.value.toLowerCase().trim();
+      var products = document.querySelectorAll('.product-node');
+      var visible  = 0;
+
+      for (var i = 0; i < products.length; i++) {
+        var p       = products[i];
+        var cat     = p.getAttribute('data-category') || '';
+        var title   = p.getAttribute('data-title')    || '';
+        var descEl  = p.querySelector('.product-desc');
+        var brandEl = p.querySelector('.product-brand');
+        var desc    = descEl  ? descEl.textContent.toLowerCase()  : '';
+        var brand   = brandEl ? brandEl.textContent.toLowerCase() : '';
+
+        var matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        var matchesQuery = (
+          !query ||
+          title.indexOf(query)  > -1 ||
+          desc.indexOf(query)   > -1 ||
+          brand.indexOf(query)  > -1 ||
+          cat.indexOf(query)    > -1
+        );
+
+        if (matchesCat && matchesQuery) {
+          p.classList.remove('hidden');
+          visible++;
+        } else {
+          p.classList.add('hidden');
+        }
+      }
+
+      // Show / hide empty state
+      var noResults = document.getElementById('no-results');
+      if (noResults) {
+        noResults.style.display = (visible === 0) ? 'block' : 'none';
+      }
+
+      // Update live result count label
+      var countEl = document.getElementById('result-count');
+      if (countEl) {
+        var catLabel   = (currentCategory === 'all') ? 'all categories' : currentCategory;
+        var queryLabel = query ? ('matching "' + query + '"') : ('in ' + catLabel);
+        countEl.innerHTML = '<strong>' + visible + ' item' + (visible !== 1 ? 's' : '') + '</strong> ' + queryLabel;
+      }
+    }
+
+  </script>
+</body>
+</html>
