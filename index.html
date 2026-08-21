@@ -1,737 +1,169 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuptias UK | Bespoke Wedding Favours & Personalised Keepsakes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --dark-red: #58111A;
-      --burgundy: #7A1C2E;
-      --blush-pink: #F8E8EB;
-      --rose-pink: #E2A3AD;
-      --accent-pink: #C86D7C;
-      --light-bg: #FDFAF8;
-      --white: #FFFFFF;
-      --text-dark: #2C181B;
-      --text-muted: #6B5559;
-      --border-color: #EED9DD;
-      --shadow-sm: 0 4px 15px rgba(88, 17, 26, 0.05);
-      --shadow-lg: 0 15px 35px rgba(88, 17, 26, 0.12);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    h1, h2, h3, .serif-font {
-      font-family: 'Cinzel', serif;
-      font-weight: 500;
-      letter-spacing: 0.8px;
-    }
-
-    .script-font {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.8rem;
-      color: var(--accent-pink);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* Top Announcement Bar */
-    .top-bar {
-      background-color: var(--dark-red);
-      color: var(--blush-pink);
-      text-align: center;
-      padding: 8px 15px;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* Navigation */
-    .navbar {
-      background-color: var(--white);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-    }
-
-    .logo {
-      font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--dark-red);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .logo span {
-      font-size: 0.85rem;
-      display: block;
-      letter-spacing: 4px;
-      color: var(--accent-pink);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-      margin-top: -3px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--burgundy);
-    }
-
-    .cart-badge-btn {
-      background-color: var(--blush-pink);
-      color: var(--dark-red);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border: 1px solid var(--rose-pink);
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .cart-badge-btn:hover {
-      background-color: var(--rose-pink);
-      color: var(--white);
-    }
-
-    .cta-btn {
-      background-color: var(--burgundy);
-      color: var(--white);
-      padding: 12px 26px;
-      border-radius: 4px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      transition: var(--transition);
-      display: inline-block;
-      border: 1px solid var(--burgundy);
-      cursor: pointer;
-    }
-
-    .cta-btn:hover {
-      background-color: var(--dark-red);
-      box-shadow: 0 4px 12px rgba(88, 17, 26, 0.25);
-    }
-
-    /* Hero Section with Background Integration */
-    .hero {
-      position: relative;
-      background: linear-gradient(rgba(88, 17, 26, 0.65), rgba(88, 17, 26, 0.75)), url('5.jpg') center/cover no-repeat;
-      padding: 130px 0 110px 0;
-      text-align: center;
-      color: var(--white);
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero-subtitle {
-      color: var(--rose-pink);
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .hero-title {
-      font-size: 3.6rem;
-      color: var(--white);
-      line-height: 1.2;
-      margin-bottom: 25px;
-    }
-
-    .hero-description {
-      font-size: 1.15rem;
-      color: var(--blush-pink);
-      margin-bottom: 35px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 300;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: var(--white);
-      border: 1px solid var(--rose-pink);
-      padding: 12px 26px;
-      border-radius: 4px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      transition: var(--transition);
-    }
-
-    .btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Section Headers */
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-tag {
-      color: var(--accent-pink);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 2.6rem;
-      color: var(--dark-red);
-    }
-
-    /* Products Section */
-    .products-section {
-      padding: 90px 0;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .product-card {
-      background-color: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .product-image-holder {
-      height: 240px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-image-holder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .product-card:hover .product-image-holder img {
-      transform: scale(1.05);
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background-color: var(--dark-red);
-      color: var(--white);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 20px;
-      letter-spacing: 1px;
-      z-index: 2;
-    }
-
-    .product-info {
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-title {
-      font-size: 1.4rem;
-      color: var(--dark-red);
-      margin-bottom: 8px;
-    }
-
-    .product-price {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--burgundy);
-      margin-bottom: 12px;
-    }
-
-    .product-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-
-    .buy-btn {
-      background-color: var(--blush-pink);
-      color: var(--dark-red);
-      border: 1px solid var(--rose-pink);
-      padding: 10px 20px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: var(--transition);
-      width: 100%;
-      text-align: center;
-    }
-
-    .buy-btn:hover {
-      background-color: var(--dark-red);
-      color: var(--white);
-      border-color: var(--dark-red);
-    }
-
-    /* Story Section with Split Layout & Images */
-    .story-section {
-      background-color: var(--blush-pink);
-      padding: 100px 0;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .story-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .story-images img {
-      border-radius: 8px;
-      box-shadow: var(--shadow-sm);
-      height: 280px;
-      object-fit: cover;
-    }
-
-    .story-images img:nth-child(2) {
-      margin-top: 30px;
-    }
-
-    .story-content .section-tag {
-      text-align: left;
-    }
-
-    .story-content .section-title {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .story-body {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-    }
-
-    .story-body p {
-      margin-bottom: 15px;
-    }
-
-    .story-highlight {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--burgundy);
-      margin: 25px 0;
-      padding-left: 15px;
-      border-left: 3px solid var(--burgundy);
-      font-weight: 500;
-    }
-
-    /* Visual Showcase Banner */
-    .visual-banner {
-      height: 400px;
-      background: linear-gradient(rgba(44, 24, 27, 0.4), rgba(44, 24, 27, 0.4)), url('4.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--white);
-      padding: 0 20px;
-    }
-
-    .visual-banner h2 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    /* Info & Contact Grid */
-    .info-section {
-      padding: 90px 0;
-      background-color: var(--light-bg);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-    }
-
-    .info-card {
-      background-color: var(--white);
-      padding: 40px 30px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      text-align: center;
-    }
-
-    .info-card h3 {
-      font-size: 1.6rem;
-      color: var(--dark-red);
-      margin-bottom: 15px;
-    }
-
-    .info-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .info-card strong {
-      color: var(--text-dark);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--text-dark);
-      color: var(--blush-pink);
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    footer p {
-      opacity: 0.8;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 900px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-      }
-      .story-images {
-        order: 2;
-      }
-      .story-content {
-        order: 1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .section-title {
-        font-size: 2.1rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyGutFuel — Evidence-Based Gut Health Picks</title>
+  <meta name="description" content="Honest, evidence-based recommendations for gut health supplements, fermented foods, and probiotics that are actually worth spending money on." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    Handcrafted Bespoke Favours & Wedding Keepsakes • Direct Ordering Available UK-Wide
+  <div class="disclosure-banner">
+    <strong>Disclosure:</strong> This site contains affiliate links. As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.
   </div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">
-        Nuptias
-        <span>United Kingdom</span>
-      </a>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">HappyGut<span>Fuel</span>.</a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button class="cart-badge-btn" onclick="alert('Your basket is currently empty. Start adding bespoke items below!')">🛒 Basket (0)</button></li>
+        <li><a href="index.html" class="active">All Posts</a></li>
+        <li><a href="probiotics.html">Probiotics</a></li>
+        <li><a href="prebiotics.html">Prebiotics</a></li>
+        <li><a href="fermented-foods.html">Fermented Foods</a></li>
+        <li><a href="gut-brain.html">Gut-Brain</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="site-hero">
+    <div class="site-hero-inner">
+      <span class="meta-tag">✦ Microbiome Optimization</span>
+      <h1>Gut health products <span>worth</span> spending money on.</h1>
+      <p>We cut through the marketing noise to find the bio-fuels and digestive catalysts that actually make a difference — backed by evidence, not sponsored content.</p>
+      <div class="site-hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Posts published</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15</div>
+          <div class="stat-label">Products reviewed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Sponsored posts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <div class="section-header">
+      <h2 class="section-title">Latest Posts</h2>
+      <span class="section-subtitle" id="post-count">5 posts across all categories</span>
+    </div>
+
+    <div class="homepage-filter">
+      <ul class="homepage-filter-pills">
+        <li><button class="active" onclick="setPostCategory('all', this)">All</button></li>
+        <li><button onclick="setPostCategory('probiotics', this)">Probiotics</button></li>
+        <li><button onclick="setPostCategory('prebiotics', this)">Prebiotics</button></li>
+        <li><button onclick="setPostCategory('fermented-foods', this)">Fermented Foods</button></li>
+        <li><button onclick="setPostCategory('gut-brain', this)">Gut-Brain</button></li>
       </ul>
     </div>
-  </nav>
 
-  <!-- Hero Section (Uses Image 5: Gazebo setup) -->
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <span class="hero-subtitle">Bespoke Wedding Favours & Details</span>
-      <h1 class="hero-title">Every Single Detail, Perfected for Your Special Day</h1>
-      <p class="hero-description">
-        Discover elegant, handcrafted Zam Zam favours, bespoke save the date cards, personalised chocolates, and luxury stationery designed to leave lasting memories.
-      </p>
-      <div class="hero-buttons">
-        <a href="#collection" class="cta-btn">Shop Collection</a>
-        <a href="#story" class="btn-secondary">Read Our Story</a>
+    <div id="post-listing">
+
+      <!-- FEATURED — most recent post -->
+      <article class="post-card-featured" data-post-category="probiotics">
+        <div>
+          <span class="featured-badge">Latest Post</span>
+          <span class="post-category-tag">Probiotics</span>
+          <h2>The Probiotics Actually Worth Taking — and the Ones That Aren't</h2>
+          <p>Most probiotic products make bold claims but deliver marginal results. We go through the clinical evidence on strain selection, CFU counts, and delivery mechanisms to tell you which ones genuinely colonise your gut and which are expensive placebos.</p>
+          <div class="post-meta">
+            <span>Updated June 2026</span>
+            <span>·</span>
+            <span>10 min read</span>
+          </div>
+          <a href="posts/best-probiotics-for-gut-health.html" class="btn-read-post">Read Post →</a>
+        </div>
+        <div class="featured-product-count">
+          <div class="count-number">3</div>
+          <div class="count-label">Products<br>reviewed</div>
+        </div>
+      </article>
+
+      <!-- POST GRID -->
+      <div class="post-grid" id="post-grid">
+
+        <article class="post-card" data-post-category="probiotics">
+          <span class="post-category-tag">Probiotics</span>
+          <h3>The Best Probiotics for Bloating — What the Evidence Actually Says</h3>
+          <p>Bloating is the most searched gut complaint online. We look at which probiotic strains have genuine clinical evidence behind them for reducing bloating and IBS symptoms.</p>
+          <div class="post-card-footer">
+            <span class="post-card-read-time">8 min read</span>
+            <a href="posts/probiotics-for-bloating.html" class="post-card-link">Read Post →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-post-category="prebiotics">
+          <span class="post-category-tag">Prebiotics</span>
+          <h3>Prebiotic Fibre Worth Taking in 2026 — Acacia, Inulin, and the Rest</h3>
+          <p>Fibermaxxing is more than a TikTok trend. We break down which prebiotic fibres have real evidence for feeding your microbiome, and which are just expensive psyllium.</p>
+          <div class="post-card-footer">
+            <span class="post-card-read-time">9 min read</span>
+            <a href="posts/prebiotic-fibre-worth-taking.html" class="post-card-link">Read Post →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-post-category="fermented-foods">
+          <span class="post-category-tag">Fermented Foods</span>
+          <h3>Fermented Foods That Are Actually Worth Eating for Gut Health</h3>
+          <p>Kefir, kimchi, sauerkraut, kombucha — which fermented foods have the strongest evidence for improving microbiome diversity, and which brands are worth buying over making your own.</p>
+          <div class="post-card-footer">
+            <span class="post-card-read-time">7 min read</span>
+            <a href="posts/fermented-foods-gut-health.html" class="post-card-link">Read Post →</a>
+          </div>
+        </article>
+
+        <article class="post-card" data-post-category="gut-brain">
+          <span class="post-category-tag">Gut-Brain</span>
+          <h3>Gut-Brain Axis Supplements Worth Your Money in 2026</h3>
+          <p>The gut-brain connection is the fastest-rising topic in microbiome science. We look at which supplements — adaptogens, amino acids, minerals — have evidence for supporting both gut barrier integrity and cognitive wellbeing.</p>
+          <div class="post-card-footer">
+            <span class="post-card-read-time">9 min read</span>
+            <a href="posts/gut-brain-axis-supplements.html" class="post-card-link">Read Post →</a>
+          </div>
+        </article>
+
       </div>
+
+      <div id="no-posts" style="display:none; text-align:center; padding:48px 20px; border:2px dashed var(--border); border-radius:16px; color:var(--text-muted); font-size:0.95rem;">
+        No posts in that category yet — check back soon.
+      </div>
+
     </div>
   </section>
 
-  <!-- Collection / Products Section -->
-  <section class="products-section" id="collection">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Handcrafted Treasures</span>
-        <h2 class="section-title">Our Unique Wedding Collection</h2>
-      </div>
-
-      <div class="products-grid">
-        <!-- Product 1 (Uses Image 3: Wedding arch / floral decor vibe or general aesthetic) -->
-        <div class="product-card">
-          <div class="product-image-holder">
-            <span class="product-badge">Signature</span>
-            <img src="3.jpg" alt="Bespoke Zam Zam Favours">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Bespoke Zam Zam Favours</h3>
-            <div class="product-price">From £3.50 each</div>
-            <p class="product-desc">Our signature glass bottles, beautifully decorated with custom ribbons, gold foil tags, and blessed holy water.</p>
-            <button class="buy-btn" onclick="alert('Added Bespoke Zam Zam Favours to your order basket!')">Add to Basket</button>
-          </div>
-        </div>
-
-        <!-- Product 2 (Uses Image 1: Wedding rings) -->
-        <div class="product-card">
-          <div class="product-image-holder">
-            <img src="1.jpg" alt="Save the Date Cards">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Save the Date Cards</h3>
-            <div class="product-price">£1.80 per card</div>
-            <p class="product-desc">Exquisite stationery sets crafted with luxury textured cardstock and custom typography to announce your celebration.</p>
-            <button class="buy-btn" onclick="alert('Added Save the Date Cards to your order basket!')">Add to Basket</button>
-          </div>
-        </div>
-
-        <!-- Product 3 (Uses Image 4: Table setup details) -->
-        <div class="product-card">
-          <div class="product-image-holder">
-            <img src="4.jpg" alt="Personalised Stickers">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Personalised Stickers</h3>
-            <div class="product-price">£12.00 per sheet</div>
-            <p class="product-desc">Custom-designed foil and vinyl stickers to add a refined, personalised signature to favours, envelopes, and gifts.</p>
-            <button class="buy-btn" onclick="alert('Added Personalised Stickers to your order basket!')">Add to Basket</button>
-          </div>
-        </div>
-
-        <!-- Product 4 (Uses Image 2: Romantic floral bouquet) -->
-        <div class="product-card">
-          <div class="product-image-holder">
-            <img src="2.jpg" alt="Personalised Chocolates">
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">Personalised Chocolates</h3>
-            <div class="product-price">£2.20 each</div>
-            <p class="product-desc">Delicious artisan chocolates wrapped in custom customisable wrappers matching your wedding theme.</p>
-            <button class="buy-btn" onclick="alert('Added Personalised Chocolates to your order basket!')">Add to Basket</button>
-          </div>
-        </div>
-      </div>
+  <section class="homepage-newsletter">
+    <div class="homepage-newsletter-inner">
+      <h2>No sponsored noise.</h2>
+      <p>New gut health recommendations when there's something genuinely worth sharing — not on a schedule, not to fill a content calendar. Just honest picks when we find them.</p>
+      <form class="homepage-newsletter-form" onsubmit="handleSubscribe(event)">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">Get the Newsletter</button>
+      </form>
     </div>
   </section>
 
-  <!-- Story Section (Uses Images 6 and 7 strategically) -->
-  <section class="story-section" id="story">
-    <div class="container story-grid">
-      <div class="story-images">
-        <img src="6.jpg" alt="Traditional wedding hands">
-        <img src="7.jpg" alt="Wedding bands detail">
-      </div>
-      <div class="story-content">
-        <span class="section-tag">Behind Nuptias</span>
-        <h2 class="section-title">The Nuptias Story</h2>
-        
-        <div class="story-body">
-          <p>
-            Our story began in the autumn of 2015—two souls destined to be together and ready to embark on their new adventure! The beautiful dresses, the shopping, the jewellery, the make-up, the ring, the wedding favours… it all had to be perfect… every single little detail.
-          </p>
-          <p>
-            And of course, planning and preparing a wedding is lots of fun, right? Right? …Well, for a start, we didn’t have a clue where to begin. In all honesty, we were a little all over the place, trying to make everything perfect and find all the right things, at the right prices, in the right places… well, it definitely wasn’t easy! But we got there… eventually, alhamdulillah.
-          </p>
-          
-          <div class="story-highlight">
-            "After our wedding, we received so many enquiries about our bespoke, unique Zam Zam Water favours… it was right there that Nuptias UK was born."
-          </div>
-
-          <p>
-            We’ve tried to stay true to our core beliefs and deliver beautiful, elegant, and exceptionally designed bespoke Zam Zam favours for our community. We owe a huge thanks to each and every single one of you for joining us on this beautiful journey, and we hope that you’ll continue to be a part of our story and let us be a part of yours.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Visual Banner (Uses Image 5/3 vibe via CSS background) -->
-  <div class="visual-banner">
-    <div>
-      <span class="script-font" style="color: var(--rose-pink);">Handcrafted with love</span>
-      <h2>Making Your Celebration Unforgettable</h2>
-    </div>
-  </div>
-
-  <!-- Info & Contact Section -->
-  <section class="info-section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Visit & Connect With Us</h2>
-      </div>
-
-      <div class="info-grid">
-        <!-- Opening Hours -->
-        <div class="info-card">
-          <h3>Opening Hours</h3>
-          <p>We are available to help you plan your special day throughout the week:</p>
-          <br>
-          <p><strong>Monday – Sunday</strong></p>
-          <p>9:00 am – 7:00 pm</p>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="info-card">
-          <h3>Contact Details</h3>
-          <p>Have questions about direct orders or custom design requests?</p>
-          <br>
-          <p><strong>Email Us:</strong></p>
-          <p><a href="mailto:info@nuptias.co.uk" style="color: var(--burgundy); text-decoration: underline;">info@nuptias.co.uk</a></p>
-        </div>
-
-        <!-- Location -->
-        <div class="info-card">
-          <h3>Our Studio</h3>
-          <p>Located in the heart of Birmingham:</p>
-          <br>
-          <p><strong>Nuptias UK</strong></p>
-          <p>2 Brindley Place</p>
-          <p>Birmingham, B1 2JB</p>
-          <p>United Kingdom</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Nuptias UK. All rights reserved. Crafting beautiful wedding memories.</p>
+    <div class="footer-inner">
+      <span>© 2026 HappyGutFuel. All rights reserved.</span>
+      <span>This site contains <strong>affiliate links</strong> — we earn a small commission if you buy, at no extra cost to you.</span>
     </div>
   </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
