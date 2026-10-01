@@ -991,3 +991,70 @@
 @media (max-width: 860px) {
   .daily-inner { grid-template-columns: 1fr; gap: 32px; }
 }
+
+
+/* ── GUIDES LIST ──────────────────────────────────────────────
+   A list, not a card grid. Five articles don't need five filter
+   pills and a featured hero card — that was interface for its own
+   sake and it was the longest thing on the homepage. Switch back
+   to .post-grid when the library is big enough to need browsing.
+   ─────────────────────────────────────────────────────────── */
+
+.guides-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 52px 20px 72px;
+}
+
+.guide-list { list-style: none; border-top: 1px solid var(--border); }
+
+.guide-list li { border-bottom: 1px solid var(--border); }
+
+.guide-list a {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 4px;
+  transition: background 0.15s, padding 0.15s;
+}
+.guide-list a:hover {
+  background: var(--bg-card);
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.guide-cat {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+}
+
+.guide-title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.guide-list a:hover .guide-title { color: var(--accent); }
+
+.guide-meta {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .guide-list a {
+    grid-template-columns: 1fr auto;
+    gap: 4px 14px;
+    padding: 16px 4px;
+  }
+  .guide-cat { grid-column: 1 / -1; }
+  .guide-list a:hover { padding-left: 4px; padding-right: 4px; background: none; }
+}
