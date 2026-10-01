@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — HappyGutFuel</title>
+  <meta name="description" content="That page does not exist. Here is where to go instead.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('hgf-theme');
+        document.documentElement.setAttribute('data-theme', s === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="/" class="logo" aria-label="HappyGutFuel home">HappyGut<span>Fuel</span>.</a>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/probiotics.html">Probiotics</a></li>
+          <li><a href="/prebiotics.html">Prebiotics</a></li>
+          <li><a href="/fermented-foods.html">Fermented foods</a></li>
+          <li><a href="/gut-brain.html">Gut-brain</a></li>
+          <li><a href="/shop.html">Shop picks</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-actions">
+        <a href="/gut-check.html" class="nav-cta">Gut check</a>
+        <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="error-page">
+      <p class="error-code">404</p>
+      <h1>That page isn&rsquo;t here.</h1>
+      <p>
+        Either the link was wrong or we have moved something. Nothing is broken on
+        your end. Try one of these instead.
+      </p>
+      <ul class="error-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop.html">Shop picks</a></li>
+        <li><a href="/gut-check.html">Gut check</a></li>
+        <li><a href="/probiotics.html">Probiotics</a></li>
+        <li><a href="/prebiotics.html">Prebiotics</a></li>
+        <li><a href="/fermented-foods.html">Fermented foods</a></li>
+        <li><a href="/gut-brain.html">Gut-brain</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>&copy; 2026 HappyGutFuel. All rights reserved.</span>
+      <span>Some links are affiliate links and may earn us a commission.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/home.js"></script>
+
+</body>
+</html>

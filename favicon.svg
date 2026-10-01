@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HappyGutFuel">
+  <rect width="64" height="64" rx="14" fill="#2d6a4f"/>
+  <path d="M32 13c-9 0-16 6.6-16 15.4 0 7.2 4.4 10.6 7.6 13.2 2.3 1.8 3.6 3 3.6 5.2v4.6a1.8 1.8 0 0 0 1.8 1.8h6a1.8 1.8 0 0 0 1.8-1.8v-4.6c0-2.2 1.3-3.4 3.6-5.2C43.6 39 48 35.6 48 28.4 48 19.6 41 13 32 13Z" fill="none" stroke="#f7f4ef" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M25 29c3.6-3.2 10.4-3.2 14 0" fill="none" stroke="#f7f4ef" stroke-width="3.4" stroke-linecap="round"/>
+</svg>

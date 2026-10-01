@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HappyGutFuel — Better gut health, without the guesswork</title>
-  <meta name="description" content="Evidence-led gut health guides. Probiotics, prebiotic fibre, fermented foods and the gut-brain axis, explained plainly — with honest product recommendations.">
+  <meta name="description" content="Evidence-led gut health guides and honest product picks. Probiotics, prebiotic fibre, fermented foods and the gut-brain axis, explained plainly.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://happygutfuel.com/">
 
@@ -13,25 +13,20 @@
   <meta property="og:site_name" content="HappyGutFuel">
   <meta property="og:url" content="https://happygutfuel.com/">
   <meta property="og:title" content="HappyGutFuel — Better gut health, without the guesswork">
-  <meta property="og:description" content="Evidence-led gut health guides and products worth considering — without the hype.">
-  <meta property="og:image" content="https://happygutfuel.com/assets/img/og-default.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description" content="Evidence-led gut health guides and honest product picks. Probiotics, prebiotic fibre, fermented foods and the gut-brain axis, explained plainly.">
+  <meta name="twitter:card" content="summary">
 
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!--
-    Theme applied before first paint so dark-mode users don't get a white flash.
-    'hgf-theme' must match the storage key used by toggleTheme() in main.js.
-  -->
+  <!-- Theme before first paint. Matches main.js: light unless the visitor
+       has manually chosen dark. Do not add a prefers-color-scheme check
+       here or the two will fight and the page will flicker. -->
   <script>
     (function () {
       try {
-        var saved = localStorage.getItem('hgf-theme');
-        if (!saved) {
-          saved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', saved);
+        var s = localStorage.getItem('hgf-theme');
+        document.documentElement.setAttribute('data-theme', s === 'dark' ? 'dark' : 'light');
       } catch (e) {
         document.documentElement.setAttribute('data-theme', 'light');
       }
@@ -40,42 +35,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/home.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://happygutfuel.com/#organisation",
-        "name": "HappyGutFuel",
-        "url": "https://happygutfuel.com/",
-        "description": "Evidence-led gut health guides and product recommendations."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://happygutfuel.com/#website",
-        "name": "HappyGutFuel",
-        "url": "https://happygutfuel.com/",
-        "publisher": { "@id": "https://happygutfuel.com/#organisation" },
-        "inLanguage": "en-GB"
-      }
-    ]
-  }
-  </script>
 </head>
 
 <body>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <div class="disclosure-banner">
     <strong>Affiliate disclosure:</strong>
-    we may earn a commission when you buy through some of our links, at no extra cost to you.
+    we may earn a commission when you buy through some of our links, at no extra
+    cost to you. It never changes what we recommend.
   </div>
 
   <header>
@@ -84,10 +59,6 @@
       <a href="index.html" class="logo" aria-label="HappyGutFuel home">
         HappyGut<span>Fuel</span>.
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
 
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-links">
@@ -100,10 +71,16 @@
         </ul>
       </nav>
 
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <div class="nav-actions">
+        <a href="gut-check.html" class="nav-cta">Gut check</a>
         <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
       </div>
@@ -114,7 +91,7 @@
   <main id="main">
 
     <!-- ============================================================
-         1. HERO — one message, one action
+         1. HERO
          ============================================================ -->
     <section class="site-hero">
       <div class="site-hero-inner">
@@ -128,7 +105,7 @@
 
         <div class="hero-actions">
           <a href="gut-check.html" class="btn-primary">Take the 60-second gut check</a>
-          <a href="#guides" class="text-link">Or browse the guides</a>
+          <a href="#picks" class="text-link">Or jump to our picks</a>
         </div>
 
         <ul class="site-hero-points">
@@ -141,13 +118,106 @@
     </section>
 
     <!-- ============================================================
-         2. GUIDES — the actual content
+         2. PICKS
+         ============================================================ -->
+    <section class="picks-section" id="picks" aria-labelledby="picks-title">
+
+      <div class="section-header">
+        <h2 class="section-title" id="picks-title">This month&rsquo;s picks</h2>
+        <a href="shop.html" class="section-link">See all picks</a>
+      </div>
+
+      <p class="section-intro">
+        Three products we would buy ourselves, chosen on strain detail, delivery
+        format and cost per serving. Each links through to the full write-up.
+      </p>
+
+      <div class="pick-grid">
+
+        <article class="pick-card">
+          <span class="pick-badge">Best overall</span>
+          <div class="pick-thumb" aria-hidden="true"><span>ProCombo</span></div>
+          <div class="pick-body">
+            <p class="pick-category">Probiotic + prebiotic</p>
+            <h3><a href="shop.html#procombo">ProCombo</a></h3>
+            <p class="pick-desc">
+              A DuoCap&trade; double capsule, so the probiotic and the prebiotic
+              fibre release at different stages rather than together.
+            </p>
+            <ul class="pick-specs">
+              <li>200 billion CFU/g</li>
+              <li>La-14&reg; strain, named</li>
+              <li>NutraFlora&reg; prebiotic</li>
+            </ul>
+            <div class="pick-actions">
+              <a href="shop.html#procombo" class="btn-buy">See the detail</a>
+              <a href="posts/best-probiotics-for-gut-health.html" class="pick-why">Why we picked it</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <span class="pick-badge">Best to start with</span>
+          <div class="pick-thumb" aria-hidden="true"><span>Optibac</span></div>
+          <div class="pick-body">
+            <p class="pick-category">Probiotic</p>
+            <h3><a href="shop.html#optibac">Optibac Every Day</a></h3>
+            <p class="pick-desc">
+              Publishes full Rosell&reg; strain codes, which is what lets you check
+              a strain against the actual research.
+            </p>
+            <ul class="pick-specs">
+              <li>Full strain codes published</li>
+              <li>No refrigeration needed</li>
+              <li>Lowest cost per day</li>
+            </ul>
+            <div class="pick-actions">
+              <a href="shop.html#optibac" class="btn-buy">See the detail</a>
+              <a href="posts/best-probiotics-for-gut-health.html" class="pick-why">Why we picked it</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pick-card">
+          <span class="pick-badge">Most in one capsule</span>
+          <div class="pick-thumb" aria-hidden="true"><span>Bettervits</span></div>
+          <div class="pick-body">
+            <p class="pick-category">Probiotic + B12</p>
+            <h3><a href="shop.html#bettervits">Bettervits</a></h3>
+            <p class="pick-desc">
+              Ten strains plus chicory inulin and methylcobalamin B12. Good value if
+              you already buy a separate B12.
+            </p>
+            <ul class="pick-specs">
+              <li>30 billion CFU, 10 strains</li>
+              <li>Methylcobalamin B12</li>
+              <li>UK-made, GMP certified</li>
+            </ul>
+            <div class="pick-actions">
+              <a href="shop.html#bettervits" class="btn-buy">See the detail</a>
+              <a href="posts/best-probiotics-for-gut-health.html" class="pick-why">Why we picked it</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="affiliate-note">
+        <strong>How we make money:</strong>
+        some links here are affiliate links. If you buy through one we may receive a
+        commission. It doesn&rsquo;t change your price, and it doesn&rsquo;t decide
+        whether a product appears.
+      </p>
+
+    </section>
+
+    <!-- ============================================================
+         3. GUIDES
          ============================================================ -->
     <section class="posts-section" id="guides" aria-labelledby="library-title">
 
       <div class="section-header">
         <h2 class="section-title" id="library-title">The guides</h2>
-        <a href="shop.html" class="section-link">See all product picks</a>
       </div>
 
       <div class="homepage-filter">
@@ -165,115 +235,105 @@
       <div id="post-listing">
 
         <article class="post-card post-card-featured" data-post-category="probiotics">
-          <p class="post-category-tag">Probiotics &middot; Featured</p>
-
-          <h3><a href="posts/best-probiotics-for-gut-health.html">The probiotics actually worth considering</a></h3>
-
+          <span class="post-category-tag">Probiotics</span>
+          <h3><a href="posts/best-probiotics-for-gut-health.html">The probiotics actually worth taking</a></h3>
           <p>
             Probiotic products vary enormously by strain, formulation and intended
-            use. We explain what to look for before spending money on one — and
-            name the three we'd buy.
+            use. What to look for before spending money on one &mdash; and the three
+            we would buy.
           </p>
-
-          <p class="post-card-footer">
+          <div class="post-card-footer">
             <span class="post-card-read-time">10 min read &middot; Updated June 2026</span>
             <a href="posts/best-probiotics-for-gut-health.html" class="post-card-link">Read</a>
-          </p>
+          </div>
         </article>
 
         <div class="post-grid" id="post-grid">
 
           <article class="post-card" data-post-category="probiotics">
-            <p class="post-category-tag">Probiotics</p>
-            <h3><a href="posts/probiotics-for-bloating.html">Probiotics for bloating — what the evidence says</a></h3>
+            <span class="post-category-tag">Probiotics</span>
+            <h3><a href="posts/probiotics-for-bloating.html">Probiotics for bloating &mdash; what the evidence says</a></h3>
             <p>
               The research on specific strains and digestive symptoms, and what it
-              means when you're stood in the supplement aisle.
+              means when you are stood in the supplement aisle.
             </p>
-            <p class="post-card-footer">
+            <div class="post-card-footer">
               <span class="post-card-read-time">8 min read</span>
               <a href="posts/probiotics-for-bloating.html" class="post-card-link">Read</a>
-            </p>
+            </div>
           </article>
 
           <article class="post-card" data-post-category="prebiotics">
-            <p class="post-category-tag">Prebiotics</p>
+            <span class="post-category-tag">Prebiotics</span>
             <h3><a href="posts/prebiotic-fibre-worth-taking.html">Prebiotic fibre: acacia, inulin, PHGG and the rest</a></h3>
             <p>
               How the common fibre ingredients differ, which ones cause trouble, and
-              what you're actually paying per serving.
+              what you are actually paying per serving.
             </p>
-            <p class="post-card-footer">
+            <div class="post-card-footer">
               <span class="post-card-read-time">9 min read</span>
               <a href="posts/prebiotic-fibre-worth-taking.html" class="post-card-link">Read</a>
-            </p>
+            </div>
           </article>
 
           <article class="post-card" data-post-category="fermented-foods">
-            <p class="post-category-tag">Fermented foods</p>
+            <span class="post-category-tag">Fermented foods</span>
             <h3><a href="posts/fermented-foods-gut-health.html">Fermented foods worth adding to your routine</a></h3>
             <p>
-              Kefir, kimchi, sauerkraut and the rest — what makes them different and
-              how to use them without overhauling your shopping.
+              Kefir, kimchi, sauerkraut and the rest &mdash; what makes them different
+              and how to use them without overhauling your shopping.
             </p>
-            <p class="post-card-footer">
+            <div class="post-card-footer">
               <span class="post-card-read-time">7 min read</span>
               <a href="posts/fermented-foods-gut-health.html" class="post-card-link">Read</a>
-            </p>
+            </div>
           </article>
 
           <article class="post-card" data-post-category="gut-brain">
-            <p class="post-category-tag">Gut-brain</p>
+            <span class="post-category-tag">Gut-brain</span>
             <h3><a href="posts/gut-brain-axis-supplements.html">The gut-brain connection: what we actually know</a></h3>
             <p>
               A straight look at the research linking digestion, the microbiome and
-              mood — including how much of it is still in mice.
+              mood &mdash; including how much of it is still in mice.
             </p>
-            <p class="post-card-footer">
+            <div class="post-card-footer">
               <span class="post-card-read-time">9 min read</span>
               <a href="posts/gut-brain-axis-supplements.html" class="post-card-link">Read</a>
-            </p>
+            </div>
           </article>
 
         </div>
 
-        <p id="no-posts" class="no-posts" hidden>
-          Nothing in that category yet.
-        </p>
+        <p id="no-posts" class="no-posts" hidden>Nothing in that category yet.</p>
 
       </div>
 
     </section>
 
     <!-- ============================================================
-         3. ONE EMAIL ASK
+         4. EMAIL
          ============================================================ -->
     <section class="signup-section" id="subscribe" aria-labelledby="signup-title">
       <div class="signup-inner">
 
         <h2 id="signup-title">Get the 30-day gut challenge.</h2>
 
-        <p>
+        <p class="signup-lede">
           A daily checklist for improving gut-friendly habits without overhauling
-          your diet. Free, and you'll get new guides as we publish them.
+          your diet. Free, and you will get new guides as we publish them.
         </p>
 
         <form class="signup-form" data-signup-source="homepage" onsubmit="handleSubscribe(event)">
           <label class="visually-hidden" for="signup-email">Email address</label>
-          <input
-            type="email"
-            id="signup-email"
-            name="email"
-            autocomplete="email"
-            placeholder="your@email.com"
-            required>
+          <input type="email" id="signup-email" name="email" autocomplete="email"
+                 placeholder="your@email.com" required>
           <button type="submit">Send it over</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <p class="signup-footnote">
-          You'll also be first to hear about HappyGutFuel Daily, the fibre product
-          we're developing. Unsubscribe any time.
+          You will also be first to hear about HappyGutFuel Daily, the fibre product
+          we are developing. Unsubscribe any time.
         </p>
 
       </div>
@@ -297,7 +357,6 @@
           <a href="fermented-foods.html">Fermented foods</a>
           <a href="gut-brain.html">Gut-brain</a>
         </div>
-
         <div>
           <h2>Site</h2>
           <a href="shop.html">Shop picks</a>
@@ -305,7 +364,6 @@
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </div>
-
         <div>
           <h2>Legal</h2>
           <a href="affiliate-disclosure.html">Affiliate disclosure</a>

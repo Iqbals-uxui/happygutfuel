@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The 60-second gut check — HappyGutFuel</title>
+  <meta name="description" content="Seven questions about how you eat and what you take. You get a plain-English profile of where the gaps are — not a score, not a diagnosis.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://happygutfuel.com/gut-check.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HappyGutFuel">
+  <meta property="og:url" content="https://happygutfuel.com/gut-check.html">
+  <meta property="og:title" content="The 60-second gut check — HappyGutFuel">
+  <meta property="og:description" content="Seven questions. A plain-English profile of where the gaps are.">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('hgf-theme');
+        document.documentElement.setAttribute('data-theme', s === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="disclosure-banner">
+    <strong>Affiliate disclosure:</strong>
+    we may earn a commission when you buy through some of our links, at no extra
+    cost to you. It never changes what we recommend.
+  </div>
+
+  <header>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo" aria-label="HappyGutFuel home">
+        HappyGut<span>Fuel</span>.
+      </a>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="probiotics.html">Probiotics</a></li>
+          <li><a href="prebiotics.html">Prebiotics</a></li>
+          <li><a href="fermented-foods.html">Fermented foods</a></li>
+          <li><a href="gut-brain.html">Gut-brain</a></li>
+          <li><a href="shop.html">Shop picks</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-actions">
+        <a href="gut-check.html" class="nav-cta active" aria-current="page">Gut check</a>
+        <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Gut check</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <section class="quiz-wrap" aria-labelledby="quiz-title">
+
+      <!-- ================= INTRO ================= -->
+      <div id="quiz-intro" class="quiz-panel">
+        <h1 id="quiz-title">The 60-second gut check</h1>
+        <p class="quiz-lede">
+          Seven questions about how you actually eat and what you already take.
+          At the end you get a profile of where the gaps are and three things
+          worth changing.
+        </p>
+        <p class="quiz-note">
+          This isn't a diagnosis and there's no score. Nothing you answer leaves
+          your browser. If you have persistent digestive symptoms, see your GP
+          rather than a quiz.
+        </p>
+        <button type="button" class="btn-primary" id="quiz-start">Start</button>
+      </div>
+
+      <!-- ================= QUESTIONS ================= -->
+      <div id="quiz-questions" class="quiz-panel" hidden>
+
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar"><span id="quiz-bar"></span></div>
+          <p class="quiz-progress-text">
+            Question <span id="quiz-current">1</span> of 7
+          </p>
+        </div>
+
+        <fieldset class="quiz-step" data-step="1">
+          <legend>How many portions of vegetables, fruit, beans or pulses do you eat on a normal day?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="fibre" data-score="0">One or two</button></li>
+            <li><button type="button" data-axis="fibre" data-score="1">Three or four</button></li>
+            <li><button type="button" data-axis="fibre" data-score="2">Five or more</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="2" hidden>
+          <legend>Are your grains mostly wholegrain — wholemeal bread, oats, brown rice?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="fibre" data-score="0">Rarely, mostly white</button></li>
+            <li><button type="button" data-axis="fibre" data-score="1">A mix of both</button></li>
+            <li><button type="button" data-axis="fibre" data-score="2">Almost always wholegrain</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="3" hidden>
+          <legend>How many different plant foods do you eat in a typical week?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="fibre" data-score="0">Under ten — I eat the same things</button></li>
+            <li><button type="button" data-axis="fibre" data-score="1">Somewhere around fifteen</button></li>
+            <li><button type="button" data-axis="fibre" data-score="2">Twenty-five or more</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="4" hidden>
+          <legend>How often do you eat fermented foods — kefir, live yoghurt, kimchi, sauerkraut, miso?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="ferment" data-score="0">Never, or almost never</button></li>
+            <li><button type="button" data-axis="ferment" data-score="1">Once or twice a week</button></li>
+            <li><button type="button" data-axis="ferment" data-score="2">Most days</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="5" hidden>
+          <legend>Do you currently take a probiotic or a fibre supplement?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="supps" data-score="0">No, neither</button></li>
+            <li><button type="button" data-axis="supps" data-score="2">Yes, one of them</button></li>
+            <li><button type="button" data-axis="supps" data-score="2">Yes, two or more</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="6" hidden>
+          <legend>If you take a supplement, do you know which strains or which fibre is in it?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="knowledge" data-score="0">No idea</button></li>
+            <li><button type="button" data-axis="knowledge" data-score="1">Roughly</button></li>
+            <li><button type="button" data-axis="knowledge" data-score="2">Yes, I checked the label</button></li>
+            <li><button type="button" data-axis="knowledge" data-score="2">Not applicable, I don't take any</button></li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="7" hidden>
+          <legend>How's your sleep and movement most weeks?</legend>
+          <ul class="quiz-options">
+            <li><button type="button" data-axis="habits" data-score="0">Poor sleep, not much movement</button></li>
+            <li><button type="button" data-axis="habits" data-score="1">One of the two is alright</button></li>
+            <li><button type="button" data-axis="habits" data-score="2">Both reasonably solid</button></li>
+          </ul>
+        </fieldset>
+
+        <button type="button" class="quiz-back" id="quiz-back" hidden>Back a question</button>
+      </div>
+
+      <!-- ================= RESULT ================= -->
+      <div id="quiz-result" class="quiz-panel" hidden>
+
+        <p class="quiz-result-label">Your profile</p>
+        <h2 id="result-name"></h2>
+        <p id="result-summary" class="quiz-result-summary"></p>
+
+        <div class="quiz-actions-box">
+          <h3>Three things worth changing</h3>
+          <ol id="result-actions"></ol>
+        </div>
+
+        <div class="quiz-links">
+          <p><strong>Start with this guide:</strong> <a id="result-guide" href="#"></a></p>
+          <p><strong>If you want a product:</strong> <a id="result-product" href="#"></a></p>
+        </div>
+
+        <div class="quiz-capture">
+          <h3>Want the 30-day plan for this profile?</h3>
+          <p>
+            A daily checklist built around the gaps above. Free, and you'll get new
+            guides as we publish them.
+          </p>
+          <form class="signup-form" data-signup-source="gut-check" onsubmit="handleSubscribe(event)">
+            <label class="visually-hidden" for="quiz-email">Email address</label>
+            <input type="email" id="quiz-email" name="email" autocomplete="email"
+                   placeholder="your@email.com" required>
+            <input type="hidden" name="profile" id="quiz-profile-field" value="">
+            <button type="submit">Send the plan</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="quiz-note">
+            We store your profile with your email so the plan matches your answers.
+            See our <a href="privacy.html">privacy page</a>. Unsubscribe any time.
+          </p>
+        </div>
+
+        <button type="button" class="quiz-back" id="quiz-restart">Start again</button>
+
+      </div>
+
+      <noscript>
+        <p class="quiz-note">
+          The gut check needs JavaScript. Our <a href="probiotics.html">guides</a>
+          cover the same ground without it.
+        </p>
+      </noscript>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo">HappyGut<span>Fuel</span>.</a>
+        <p>Better gut-health decisions, without the guesswork.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <div>
+          <h2>Guides</h2>
+          <a href="probiotics.html">Probiotics</a>
+          <a href="prebiotics.html">Prebiotics</a>
+          <a href="fermented-foods.html">Fermented foods</a>
+          <a href="gut-brain.html">Gut-brain</a>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <a href="shop.html">Shop picks</a>
+          <a href="gut-check.html">Gut check</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <a href="affiliate-disclosure.html">Affiliate disclosure</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </nav>
+
+    </div>
+
+    <p class="footer-disclaimer">
+      HappyGutFuel publishes general information, not medical advice. Nothing here
+      is intended to diagnose, treat or prevent any condition. If you have ongoing
+      digestive symptoms, are pregnant, immunocompromised or taking prescribed
+      medication, speak to your GP or a registered dietitian before changing your
+      diet or starting a supplement.
+    </p>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 HappyGutFuel. All rights reserved.</span>
+      <span>Some links are affiliate links and may earn us a commission.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home.js"></script>
+
+</body>
+</html>

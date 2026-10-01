@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Internal template, not for publication
+Disallow: /post-template.html
+
+Sitemap: https://happygutfuel.com/sitemap.xml

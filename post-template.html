@@ -1,25 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ====================================================
-    STEP 1: Update the page title and description below.
-    Title: "Your Post Title — HappyGutFuel"
-    Description: One sentence summary of the post (for Google).
-  ===================================================== -->
   <title>[POST TITLE] — HappyGutFuel</title>
-  <meta name="description" content="[ONE SENTENCE DESCRIPTION OF THIS POST FOR GOOGLE]" />
+  <meta name="description" content="Internal template. Not for publication.">
+  <meta name="robots" content="noindex, follow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HappyGutFuel">
+  <meta property="og:url" content="https://happygutfuel.com/">
+  <meta property="og:title" content="[POST TITLE] — HappyGutFuel">
+  <meta property="og:description" content="Internal template. Not for publication.">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#f7f4ef">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <!-- Theme before first paint. Matches main.js: light unless the visitor
+       has manually chosen dark. Do not add a prefers-color-scheme check
+       here or the two will fight and the page will flicker. -->
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('hgf-theme');
+        document.documentElement.setAttribute('data-theme', s === 'dark' ? 'dark' : 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <!-- DO NOT EDIT — disclosure banner is required on every page -->
   <div class="disclosure-banner">
-    <strong>Disclosure:</strong> This site contains affiliate links. As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.
+    <strong>Affiliate disclosure:</strong>
+    we may earn a commission when you buy through some of our links, at no extra
+    cost to you. It never changes what we recommend.
   </div>
 
   <!-- ====================================================
@@ -31,25 +59,38 @@
   ===================================================== -->
   <header>
     <div class="nav-container">
-      <a href="../index.html" class="logo">HappyGut<span>Fuel</span>.</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">All Posts</a></li>
-        <li><a href="../probiotics.html">Probiotics</a></li>
-        <li><a href="../prebiotics.html">Prebiotics</a></li>
-        <li><a href="../fermented-foods.html">Fermented Foods</a></li>
-        <li><a href="../gut-brain.html">Gut-Brain</a></li>
-        <!-- If you added a new category, add its nav link here too -->
-      </ul>
+
+      <a href="../index.html" class="logo" aria-label="HappyGutFuel home">
+        HappyGut<span>Fuel</span>.
+      </a>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../probiotics.html">Probiotics</a></li>
+          <li><a href="../prebiotics.html">Prebiotics</a></li>
+          <li><a href="../fermented-foods.html">Fermented foods</a></li>
+          <li><a href="../gut-brain.html">Gut-brain</a></li>
+          <li><a href="../shop.html">Shop picks</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <div class="nav-actions">
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-          <svg id="themeIcon" viewBox="0 0 24 24">
+        <a href="../gut-check.html" class="nav-cta">Gut check</a>
+        <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
       </div>
+
     </div>
   </header>
-
 
   <!-- ====================================================
     STEP 3: Update the post hero.
@@ -65,14 +106,13 @@
     <span class="meta-tag">✦ [CATEGORY NAME]</span>
     <h1>[FULL POST TITLE]</h1>
     <div class="author-strip">
-      <div class="author-img">HGF</div>
+      <div class="author-img">SO</div>
       <div class="author-info">
-        <p>HappyGutFuel Editorial</p>
+        <p>Sam Okafor</p>
         <span>Updated [MONTH YEAR] &middot; [X] min read</span>
       </div>
     </div>
   </div>
-
 
   <div class="main-layout">
 
@@ -118,7 +158,7 @@
           <div class="product-header">
             <div class="product-number">01</div>
             <div class="product-title-area">
-              <h3 class="product-title">[Product Name]</h3>
+              <h2 class="product-title">[Product Name]</h2>
               <span class="product-brand">[Category Label e.g. Multi-Strain Probiotic]</span>
             </div>
           </div>
@@ -147,7 +187,7 @@
 
           <div class="pro-con-grid">
             <div class="pc-box pro-box">
-              <h5>Pros</h5>
+              <h3>Pros</h3>
               <ul>
                 <li>[Pro point one]</li>
                 <li>[Pro point two]</li>
@@ -155,7 +195,7 @@
               </ul>
             </div>
             <div class="pc-box con-box">
-              <h5>Cons</h5>
+              <h3>Cons</h3>
               <ul>
                 <li>[Con point one]</li>
                 <li>[Con point two]</li>
@@ -175,13 +215,12 @@
           </div>
         </article>
 
-
         <!-- PRODUCT CARD 2 — copy of the block above, update number to 02 -->
         <article class="product-node" data-category="[CATEGORY-SLUG]" data-title="[full product name in lowercase]">
           <div class="product-header">
             <div class="product-number">02</div>
             <div class="product-title-area">
-              <h3 class="product-title">[Product Name]</h3>
+              <h2 class="product-title">[Product Name]</h2>
               <span class="product-brand">[Category Label]</span>
             </div>
           </div>
@@ -193,14 +232,14 @@
           <p class="product-desc">[PRODUCT DESCRIPTION]</p>
           <div class="pro-con-grid">
             <div class="pc-box pro-box">
-              <h5>Pros</h5>
+              <h3>Pros</h3>
               <ul>
                 <li>[Pro point one]</li>
                 <li>[Pro point two]</li>
               </ul>
             </div>
             <div class="pc-box con-box">
-              <h5>Cons</h5>
+              <h3>Cons</h3>
               <ul>
                 <li>[Con point one]</li>
                 <li>[Con point two]</li>
@@ -213,13 +252,12 @@
           </div>
         </article>
 
-
         <!-- PRODUCT CARD 3 — copy of the block above, update number to 03 -->
         <article class="product-node" data-category="[CATEGORY-SLUG]" data-title="[full product name in lowercase]">
           <div class="product-header">
             <div class="product-number">03</div>
             <div class="product-title-area">
-              <h3 class="product-title">[Product Name]</h3>
+              <h2 class="product-title">[Product Name]</h2>
               <span class="product-brand">[Category Label]</span>
             </div>
           </div>
@@ -231,14 +269,14 @@
           <p class="product-desc">[PRODUCT DESCRIPTION]</p>
           <div class="pro-con-grid">
             <div class="pc-box pro-box">
-              <h5>Pros</h5>
+              <h3>Pros</h3>
               <ul>
                 <li>[Pro point one]</li>
                 <li>[Pro point two]</li>
               </ul>
             </div>
             <div class="pc-box con-box">
-              <h5>Cons</h5>
+              <h3>Cons</h3>
               <ul>
                 <li>[Con point one]</li>
                 <li>[Con point two]</li>
@@ -259,7 +297,6 @@
 
       </div>
     </article>
-
 
     <!-- ================================================
       RIGHT COLUMN — sticky sidebar
@@ -304,7 +341,6 @@
 
   </div>
 
-
   <!-- ====================================================
     STEP 6: Update the footer back link.
     href should point to the category page.
@@ -312,11 +348,52 @@
   ===================================================== -->
   <footer>
     <div class="footer-inner">
-      <a href="../[CATEGORY-PAGE].html">← [CATEGORY NAME]</a>
-      <span>© 2026 HappyGutFuel. Affiliate links used throughout.</span>
+
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">HappyGut<span>Fuel</span>.</a>
+        <p>Better gut-health decisions, without the guesswork.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <div>
+          <h2>Guides</h2>
+          <a href="../probiotics.html">Probiotics</a>
+          <a href="../prebiotics.html">Prebiotics</a>
+          <a href="../fermented-foods.html">Fermented foods</a>
+          <a href="../gut-brain.html">Gut-brain</a>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <a href="../shop.html">Shop picks</a>
+          <a href="../gut-check.html">Gut check</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <a href="../affiliate-disclosure.html">Affiliate disclosure</a>
+          <a href="../privacy.html">Privacy</a>
+        </div>
+      </nav>
+
+    </div>
+
+    <p class="footer-disclaimer">
+      HappyGutFuel publishes general information, not medical advice. Nothing here
+      is intended to diagnose, treat or prevent any condition. If you have ongoing
+      digestive symptoms, are pregnant, immunocompromised or taking prescribed
+      medication, speak to your GP or a registered dietitian before changing your
+      diet or starting a supplement.
+    </p>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 HappyGutFuel. All rights reserved.</span>
+      <span>Some links are affiliate links and may earn us a commission.</span>
     </div>
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/home.js"></script>
+
 </body>
 </html>

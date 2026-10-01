@@ -46,16 +46,80 @@ function updateIcon() {
 
 
 // ── NEWSLETTER ────────────────────────────────────────────────
-// Handles both sidebar (post pages) and homepage forms.
+// One implementation for every form on the site. Two UI patterns,
+// detected from the markup rather than duplicated per page type:
+//   • Sidebar / widget forms (post pages) swap the button label.
+//   • Homepage, shop and gut-check forms have a .form-status line.
+//
+// To go live: set FORM_ENDPOINT to your email provider's hosted form
+// action and flip SUBMIT_TO_ENDPOINT to true. data-signup-source and
+// the hidden profile field are sent along, so you can tell which page
+// converted and which gut-check profile the subscriber got.
+
+var SUBMIT_TO_ENDPOINT = false;
+var FORM_ENDPOINT = ''; // e.g. 'https://assets.mailerlite.com/jsonp/XXXX/forms/YYYY/subscribe'
+
 function handleSubscribe(e) {
   e.preventDefault();
-  var btn   = e.target.querySelector('button');
-  var input = e.target.querySelector('input');
-  if (!btn || !input) return;
-  btn.textContent = "✓ You're on the list";
-  btn.style.background = '#a3671e';
-  input.disabled = true;
-  btn.disabled   = true;
+
+  var form    = e.target;
+  var btn     = form.querySelector('button');
+  var input   = form.querySelector('input[type="email"]') || form.querySelector('input');
+  var status  = form.querySelector('.form-status');
+  var profile = form.querySelector('input[name="profile"]');
+  var source  = form.getAttribute('data-signup-source') || 'unknown';
+
+  if (!btn || !input || !input.value) return;
+
+  var originalLabel = btn.textContent;
+
+  function report(message, isError) {
+    if (status) {
+      status.textContent = message;
+      status.setAttribute('data-state', isError ? 'error' : 'ok');
+      btn.disabled = false;
+      if (!isError) form.reset();
+      return;
+    }
+    if (isError) {
+      btn.textContent = originalLabel;
+      btn.disabled = false;
+      input.disabled = false;
+      return;
+    }
+    btn.textContent = "\u2713 You're on the list";
+    btn.style.background = 'var(--accent-hover)';
+    input.disabled = true;
+    btn.disabled = true;
+  }
+
+  var payload = {
+    email: input.value,
+    source: source,
+    profile: profile ? profile.value : ''
+  };
+
+  if (!SUBMIT_TO_ENDPOINT || !FORM_ENDPOINT) {
+    console.info('[signup stub]', payload);
+    report("Thanks \u2014 you're on the list. Check your inbox shortly.", false);
+    return;
+  }
+
+  if (status) status.textContent = 'Sending\u2026';
+  btn.disabled = true;
+
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+    .then(function (response) {
+      if (!response.ok) throw new Error('Request failed');
+      report("Thanks \u2014 you're on the list. Check your inbox shortly.", false);
+    })
+    .catch(function () {
+      report("That didn't go through. Try again, or email us directly.", true);
+    });
 }
 
 
