@@ -310,8 +310,87 @@
 
     </section>
 
+
     <!-- ============================================================
-         4. EMAIL
+         4. OWN PRODUCT — HappyGutFuel Daily
+
+         Deliberately placed AFTER the guides, not above them. The
+         product does not exist yet; the guides and the affiliate
+         picks do. Leading with it would be selling a promise over
+         the things that are actually finished.
+
+         Its waitlist is a SEPARATE form from the newsletter below,
+         with its own data-signup-source. Those two audiences are
+         not the same: someone asking to be told when a product
+         launches is worth far more to you than a general
+         subscriber, and you want to be able to tell them apart.
+         ============================================================ -->
+    <section class="daily-section" id="daily" aria-labelledby="daily-title">
+      <div class="daily-inner">
+
+        <div class="daily-copy">
+
+          <p class="daily-status">In development &middot; not yet available</p>
+
+          <h2 id="daily-title">We&rsquo;re making our own.</h2>
+
+          <p class="daily-lede">
+            HappyGutFuel Daily is a daily fibre product we&rsquo;re currently
+            developing with a UK manufacturer. One idea behind it: most people
+            don&rsquo;t fail at fibre because they don&rsquo;t know it matters.
+            They fail because the daily habit is awkward.
+          </p>
+
+          <ul class="daily-points">
+            <li>A single daily serving, not a scoop-and-shaker routine</li>
+            <li>Full ingredient breakdown published before it goes on sale</li>
+            <li>Priced against what it costs to make, not what the category charges</li>
+          </ul>
+
+          <p class="daily-honest">
+            It doesn&rsquo;t exist yet and we won&rsquo;t pretend otherwise.
+            There&rsquo;s no pre-order, no deposit and nothing to buy. When it
+            launches it&rsquo;ll be labelled as our own product everywhere it
+            appears, and it won&rsquo;t quietly replace something we currently
+            recommend. See our <a href="affiliate-disclosure.html">disclosure</a>.
+          </p>
+
+        </div>
+
+        <div class="daily-card">
+
+          <div class="daily-pack" aria-hidden="true">
+            <span>HAPPY<br>GUT<br>FUEL</span>
+            <strong>DAILY</strong>
+            <small>FIBRE</small>
+          </div>
+
+          <h3>Join the early-access list</h3>
+
+          <p>
+            We&rsquo;ll tell this list first, with the formulation and the price,
+            before it goes anywhere else.
+          </p>
+
+          <form class="signup-form" data-signup-source="daily-waitlist" onsubmit="handleSubscribe(event)">
+            <label class="visually-hidden" for="daily-email">Email address</label>
+            <input type="email" id="daily-email" name="email" autocomplete="email"
+                   placeholder="your@email.com" required>
+            <button type="submit">Notify me</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="daily-footnote">
+            Product news only. Unsubscribe any time.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. NEWSLETTER
          ============================================================ -->
     <section class="signup-section" id="subscribe" aria-labelledby="signup-title">
       <div class="signup-inner">
@@ -332,8 +411,8 @@
         </form>
 
         <p class="signup-footnote">
-          You will also be first to hear about HappyGutFuel Daily, the fibre product
-          we are developing. Unsubscribe any time.
+          Guides and product updates. For HappyGutFuel Daily specifically, use the
+          <a href="#daily">early-access list</a> above. Unsubscribe any time.
         </p>
 
       </div>

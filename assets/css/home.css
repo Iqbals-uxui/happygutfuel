@@ -839,3 +839,155 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ── OWN PRODUCT: HAPPYGUTFUEL DAILY ──────────────────────────
+   Visually distinct from the affiliate picks on purpose. The picks
+   are cards in a grid; this is a single banded section, so a reader
+   can tell at a glance that it is a different kind of thing and not
+   another product we are sending them away to buy.
+   ─────────────────────────────────────────────────────────── */
+
+.daily-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 20px;
+}
+
+.daily-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.daily-status {
+  display: inline-block;
+  padding: 5px 13px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.daily-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.daily-lede {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 20px;
+}
+
+.daily-points { list-style: none; margin-bottom: 22px; }
+.daily-points li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 9px;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+.daily-points li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.daily-honest {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--text-faint);
+  max-width: 54ch;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.daily-honest a { color: var(--accent); font-weight: 600; }
+
+.daily-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 28px;
+  text-align: center;
+}
+
+/* Typographic placeholder, not a mocked-up product shot. Replace with
+   a real photograph once the product exists — a fake render of an
+   unreleased product is the kind of thing that costs trust. */
+.daily-pack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 128px;
+  aspect-ratio: 3 / 4;
+  margin: 0 auto 22px;
+  padding: 18px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-accent);
+}
+.daily-pack span {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+}
+.daily-pack strong {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.daily-pack small { font-size: 0.6rem; letter-spacing: 0.22em; opacity: 0.85; }
+
+.daily-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.daily-card > p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.daily-card .signup-form { text-align: left; }
+
+.daily-footnote {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+@media (max-width: 860px) {
+  .daily-inner { grid-template-columns: 1fr; gap: 32px; }
+}
