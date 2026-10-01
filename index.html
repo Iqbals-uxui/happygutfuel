@@ -1,169 +1,1166 @@
 <!DOCTYPE html>
+
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HappyGutFuel — Evidence-Based Gut Health Picks</title>
-  <meta name="description" content="Honest, evidence-based recommendations for gut health supplements, fermented foods, and probiotics that are actually worth spending money on." />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <title>HappyGutFuel — Better Gut Health, Without the Guesswork</title>
+
+<meta
+ name="description"
+ content="Evidence-led gut health guides, practical product recommendations and simple daily habits. Discover supplements, fibre, fermented foods and products worth considering."
+/>
+
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://happygutfuel.com/" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Basic structured data -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HappyGutFuel",
+    "url": "https://happygutfuel.com/",
+    "description": "Evidence-led gut health guides, practical product recommendations and simple daily habits."
+  }
+  </script>
+
 </head>
+
 <body>
 
+  <!-- =========================================================
+       AFFILIATE DISCLOSURE
+       ========================================================= -->
+
   <div class="disclosure-banner">
-    <strong>Disclosure:</strong> This site contains affiliate links. As an Amazon Associate we earn from qualifying purchases — at no extra cost to you.
+    <strong>Affiliate disclosure:</strong>
+    HappyGutFuel may earn a commission when you buy through some of our links, at no extra cost to you.
+    We only recommend products we believe are worth considering.
   </div>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">HappyGut<span>Fuel</span>.</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">All Posts</a></li>
-        <li><a href="probiotics.html">Probiotics</a></li>
-        <li><a href="prebiotics.html">Prebiotics</a></li>
-        <li><a href="fermented-foods.html">Fermented Foods</a></li>
-        <li><a href="gut-brain.html">Gut-Brain</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-          <svg id="themeIcon" viewBox="0 0 24 24">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+
+```
+  <a href="index.html" class="logo" aria-label="HappyGutFuel home">
+    HappyGut<span>Fuel</span>.
+  </a>
+
+  <ul class="nav-links">
+
+    <li>
+      <a href="index.html" class="active">Home</a>
+    </li>
+
+    <li>
+      <a href="probiotics.html">Probiotics</a>
+    </li>
+
+    <li>
+      <a href="prebiotics.html">Prebiotics</a>
+    </li>
+
+    <li>
+      <a href="fermented-foods.html">Fermented Foods</a>
+    </li>
+
+    <li>
+      <a href="gut-brain.html">Gut-Brain</a>
+    </li>
+
+    <li>
+      <a href="#shop">Shop Picks</a>
+    </li>
+
+  </ul>
+
+  <div class="nav-actions">
+
+    <a href="#gut-check" class="nav-cta">
+      Gut Check
+    </a>
+
+    <button
+      class="theme-toggle"
+      onclick="toggleTheme()"
+      aria-label="Toggle dark mode"
+    >
+      <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+
+  </div>
+
+</div>
+```
+
   </header>
 
-  <section class="site-hero">
-    <div class="site-hero-inner">
-      <span class="meta-tag">✦ Microbiome Optimization</span>
-      <h1>Gut health products <span>worth</span> spending money on.</h1>
-      <p>We cut through the marketing noise to find the bio-fuels and digestive catalysts that actually make a difference — backed by evidence, not sponsored content.</p>
-      <div class="site-hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">5</div>
-          <div class="stat-label">Posts published</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Products reviewed</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">0</div>
-          <div class="stat-label">Sponsored posts</div>
-        </div>
-      </div>
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+
+  <section class="site-hero homepage-hero">
+
+```
+<div class="site-hero-inner">
+
+  <span class="meta-tag">
+    ✦ Better gut health, without the guesswork
+  </span>
+
+  <h1>
+    Make your gut health
+    <span>simpler.</span>
+  </h1>
+
+  <p>
+    Evidence-led guides, practical habits and products worth considering —
+    without the hype, miracle claims or endless supplement stacks.
+  </p>
+
+  <div class="hero-actions">
+
+    <a href="#gut-check" class="btn-primary">
+      Find Your Gut-Fuel Routine →
+    </a>
+
+    <a href="#shop" class="btn-secondary">
+      See Our Picks
+    </a>
+
+  </div>
+
+  <div class="site-hero-stats">
+
+    <div class="stat-item">
+      <div class="stat-number">Evidence</div>
+      <div class="stat-label">led recommendations</div>
     </div>
+
+    <div class="stat-item">
+      <div class="stat-number">No</div>
+      <div class="stat-label">paid editorial rankings</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-number">1</div>
+      <div class="stat-label">simple goal: better choices</div>
+    </div>
+
+  </div>
+
+</div>
+```
+
   </section>
+
+  <!-- =========================================================
+       GUT CHECK / LEAD GENERATION
+       ========================================================= -->
+
+  <section class="gut-check-section" id="gut-check">
+
+```
+<div class="gut-check-inner">
+
+  <div class="gut-check-copy">
+
+    <span class="section-eyebrow">
+      START HERE
+    </span>
+
+    <h2>
+      What's your gut-health routine actually missing?
+    </h2>
+
+    <p>
+      Take our simple gut-health check and identify the areas of your
+      daily routine that may be worth improving.
+    </p>
+
+    <ul class="benefit-list">
+
+      <li>
+        <span>✓</span>
+        Fibre and food habits
+      </li>
+
+      <li>
+        <span>✓</span>
+        Fermented food intake
+      </li>
+
+      <li>
+        <span>✓</span>
+        Supplement use
+      </li>
+
+      <li>
+        <span>✓</span>
+        Everyday gut-friendly habits
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="gut-check-card">
+
+    <span class="card-label">
+      60-SECOND CHECK
+    </span>
+
+    <h3>
+      Get your HappyGutFuel starting point.
+    </h3>
+
+    <p>
+      No diagnosis. No miracle score. Just practical guidance based on
+      the information you provide.
+    </p>
+
+    <a href="gut-check.html" class="btn-primary btn-full">
+      Take the Gut Check →
+    </a>
+
+    <small>
+      Free • Takes about 60 seconds
+    </small>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================================================
+       OWN PRODUCT / FUTURE REVENUE ENGINE
+       ========================================================= -->
+
+  <section class="own-product-section">
+
+```
+<div class="own-product-inner">
+
+  <div class="product-coming-soon">
+
+    <span class="meta-tag">
+      ✦ Coming soon
+    </span>
+
+    <h2>
+      We're building something of our own.
+    </h2>
+
+    <p>
+      HappyGutFuel Daily is our planned daily fibre product —
+      designed around one simple idea: making a useful daily habit
+      easier to stick to.
+    </p>
+
+    <div class="product-placeholder">
+
+      <div class="product-pack">
+
+        <span>HAPPY<br />GUT<span>FUEL</span></span>
+
+        <strong>DAILY</strong>
+
+        <small>
+          FIBRE
+        </small>
+
+      </div>
+
+      <div class="product-details">
+
+        <span class="product-status">
+          PRODUCT DEVELOPMENT
+        </span>
+
+        <h3>
+          HappyGutFuel Daily
+        </h3>
+
+        <p>
+          A simple daily fibre product we're currently developing.
+        </p>
+
+        <a href="#product-waitlist" class="text-link">
+          Join the early-access list →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================================================
+       EDITOR'S PICKS / AFFILIATE MONETISATION
+       ========================================================= -->
+
+  <section class="shop-section" id="shop">
+
+```
+<div class="section-header">
+
+  <div>
+
+    <span class="section-eyebrow">
+      SHOP SMART
+    </span>
+
+    <h2 class="section-title">
+      Products worth looking at
+    </h2>
+
+  </div>
+
+  <a href="shop.html" class="section-link">
+    See all picks →
+  </a>
+
+</div>
+
+
+<p class="section-intro">
+  We research products so you don't have to. These are examples of the
+  types of products HappyGutFuel may recommend after considering
+  ingredients, evidence, formulation, value and practical usability.
+</p>
+
+
+<div class="product-grid">
+
+
+  <!-- PRODUCT 1 -->
+
+  <article class="product-card">
+
+    <div class="product-image-placeholder">
+      <span>FIBRE</span>
+    </div>
+
+    <div class="product-card-content">
+
+      <span class="product-category">
+        Fibre
+      </span>
+
+      <h3>
+        Daily Fibre Pick
+      </h3>
+
+      <p>
+        A practical fibre option for people looking to increase their
+        daily intake.
+      </p>
+
+      <div class="product-rating">
+        <span>Editor's Pick</span>
+      </div>
+
+      <a
+        href="#"
+        class="product-buy-link"
+        rel="sponsored nofollow"
+      >
+        Check price →
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- PRODUCT 2 -->
+
+  <article class="product-card">
+
+    <div class="product-image-placeholder">
+      <span>PROBIOTIC</span>
+    </div>
+
+    <div class="product-card-content">
+
+      <span class="product-category">
+        Probiotics
+      </span>
+
+      <h3>
+        Probiotic Pick
+      </h3>
+
+      <p>
+        A product selected for its formulation, strain information
+        and overall value.
+      </p>
+
+      <div class="product-rating">
+        <span>Worth considering</span>
+      </div>
+
+      <a
+        href="#"
+        class="product-buy-link"
+        rel="sponsored nofollow"
+      >
+        Check price →
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- PRODUCT 3 -->
+
+  <article class="product-card">
+
+    <div class="product-image-placeholder">
+      <span>FERMENTED</span>
+    </div>
+
+    <div class="product-card-content">
+
+      <span class="product-category">
+        Fermented Foods
+      </span>
+
+      <h3>
+        Fermented Food Pick
+      </h3>
+
+      <p>
+        A convenient option for adding fermented foods to your normal
+        eating routine.
+      </p>
+
+      <div class="product-rating">
+        <span>Worth considering</span>
+      </div>
+
+      <a
+        href="#"
+        class="product-buy-link"
+        rel="sponsored nofollow"
+      >
+        Check price →
+      </a>
+
+    </div>
+
+  </article>
+
+
+</div>
+
+
+<div class="affiliate-note">
+
+  <strong>How we make money:</strong>
+
+  Some links on this page are affiliate links. If you purchase through
+  one, we may receive a commission. This does not increase the price
+  you pay and does not determine whether a product is included.
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================================================
+       CONTENT / AUTHORITY
+       ========================================================= -->
 
   <section class="posts-section">
-    <div class="section-header">
-      <h2 class="section-title">Latest Posts</h2>
-      <span class="section-subtitle" id="post-count">5 posts across all categories</span>
-    </div>
 
-    <div class="homepage-filter">
-      <ul class="homepage-filter-pills">
-        <li><button class="active" onclick="setPostCategory('all', this)">All</button></li>
-        <li><button onclick="setPostCategory('probiotics', this)">Probiotics</button></li>
-        <li><button onclick="setPostCategory('prebiotics', this)">Prebiotics</button></li>
-        <li><button onclick="setPostCategory('fermented-foods', this)">Fermented Foods</button></li>
-        <li><button onclick="setPostCategory('gut-brain', this)">Gut-Brain</button></li>
-      </ul>
-    </div>
+```
+<div class="section-header">
 
-    <div id="post-listing">
+  <div>
 
-      <!-- FEATURED — most recent post -->
-      <article class="post-card-featured" data-post-category="probiotics">
-        <div>
-          <span class="featured-badge">Latest Post</span>
-          <span class="post-category-tag">Probiotics</span>
-          <h2>The Probiotics Actually Worth Taking — and the Ones That Aren't</h2>
-          <p>Most probiotic products make bold claims but deliver marginal results. We go through the clinical evidence on strain selection, CFU counts, and delivery mechanisms to tell you which ones genuinely colonise your gut and which are expensive placebos.</p>
-          <div class="post-meta">
-            <span>Updated June 2026</span>
-            <span>·</span>
-            <span>10 min read</span>
-          </div>
-          <a href="posts/best-probiotics-for-gut-health.html" class="btn-read-post">Read Post →</a>
-        </div>
-        <div class="featured-product-count">
-          <div class="count-number">3</div>
-          <div class="count-label">Products<br>reviewed</div>
-        </div>
-      </article>
+    <span class="section-eyebrow">
+      LEARN
+    </span>
 
-      <!-- POST GRID -->
-      <div class="post-grid" id="post-grid">
+    <h2 class="section-title">
+      The HappyGutFuel Library
+    </h2>
 
-        <article class="post-card" data-post-category="probiotics">
-          <span class="post-category-tag">Probiotics</span>
-          <h3>The Best Probiotics for Bloating — What the Evidence Actually Says</h3>
-          <p>Bloating is the most searched gut complaint online. We look at which probiotic strains have genuine clinical evidence behind them for reducing bloating and IBS symptoms.</p>
-          <div class="post-card-footer">
-            <span class="post-card-read-time">8 min read</span>
-            <a href="posts/probiotics-for-bloating.html" class="post-card-link">Read Post →</a>
-          </div>
-        </article>
+  </div>
 
-        <article class="post-card" data-post-category="prebiotics">
-          <span class="post-category-tag">Prebiotics</span>
-          <h3>Prebiotic Fibre Worth Taking in 2026 — Acacia, Inulin, and the Rest</h3>
-          <p>Fibermaxxing is more than a TikTok trend. We break down which prebiotic fibres have real evidence for feeding your microbiome, and which are just expensive psyllium.</p>
-          <div class="post-card-footer">
-            <span class="post-card-read-time">9 min read</span>
-            <a href="posts/prebiotic-fibre-worth-taking.html" class="post-card-link">Read Post →</a>
-          </div>
-        </article>
+  <span class="section-subtitle" id="post-count">
+    Practical guides, not content for content's sake
+  </span>
 
-        <article class="post-card" data-post-category="fermented-foods">
-          <span class="post-category-tag">Fermented Foods</span>
-          <h3>Fermented Foods That Are Actually Worth Eating for Gut Health</h3>
-          <p>Kefir, kimchi, sauerkraut, kombucha — which fermented foods have the strongest evidence for improving microbiome diversity, and which brands are worth buying over making your own.</p>
-          <div class="post-card-footer">
-            <span class="post-card-read-time">7 min read</span>
-            <a href="posts/fermented-foods-gut-health.html" class="post-card-link">Read Post →</a>
-          </div>
-        </article>
+</div>
 
-        <article class="post-card" data-post-category="gut-brain">
-          <span class="post-category-tag">Gut-Brain</span>
-          <h3>Gut-Brain Axis Supplements Worth Your Money in 2026</h3>
-          <p>The gut-brain connection is the fastest-rising topic in microbiome science. We look at which supplements — adaptogens, amino acids, minerals — have evidence for supporting both gut barrier integrity and cognitive wellbeing.</p>
-          <div class="post-card-footer">
-            <span class="post-card-read-time">9 min read</span>
-            <a href="posts/gut-brain-axis-supplements.html" class="post-card-link">Read Post →</a>
-          </div>
-        </article>
+
+<div class="homepage-filter">
+
+  <ul class="homepage-filter-pills">
+
+    <li>
+      <button
+        class="active"
+        onclick="setPostCategory('all', this)"
+      >
+        All
+      </button>
+    </li>
+
+    <li>
+      <button
+        onclick="setPostCategory('probiotics', this)"
+      >
+        Probiotics
+      </button>
+    </li>
+
+    <li>
+      <button
+        onclick="setPostCategory('prebiotics', this)"
+      >
+        Prebiotics
+      </button>
+    </li>
+
+    <li>
+      <button
+        onclick="setPostCategory('fermented-foods', this)"
+      >
+        Fermented Foods
+      </button>
+    </li>
+
+    <li>
+      <button
+        onclick="setPostCategory('gut-brain', this)"
+      >
+        Gut-Brain
+      </button>
+    </li>
+
+  </ul>
+
+</div>
+
+
+<div id="post-listing">
+
+
+  <!-- =====================================================
+       FEATURED ARTICLE
+       ===================================================== -->
+
+  <article
+    class="post-card-featured"
+    data-post-category="probiotics"
+  >
+
+    <div>
+
+      <span class="featured-badge">
+        Featured Guide
+      </span>
+
+      <span class="post-category-tag">
+        Probiotics
+      </span>
+
+      <h2>
+        The Probiotics Actually Worth Considering
+      </h2>
+
+      <p>
+        Probiotic products vary significantly by strain, formulation
+        and intended use. We explain what to look for before spending
+        money on one.
+      </p>
+
+      <div class="post-meta">
+
+        <span>
+          Updated June 2026
+        </span>
+
+        <span>·</span>
+
+        <span>
+          10 min read
+        </span>
 
       </div>
 
-      <div id="no-posts" style="display:none; text-align:center; padding:48px 20px; border:2px dashed var(--border); border-radius:16px; color:var(--text-muted); font-size:0.95rem;">
-        No posts in that category yet — check back soon.
+      <a
+        href="posts/best-probiotics-for-gut-health.html"
+        class="btn-read-post"
+      >
+        Read the Guide →
+      </a>
+
+    </div>
+
+
+    <div class="featured-product-count">
+
+      <div class="count-number">
+        3
+      </div>
+
+      <div class="count-label">
+        Products<br />
+        reviewed
       </div>
 
     </div>
+
+  </article>
+
+
+  <!-- =====================================================
+       POST GRID
+       ===================================================== -->
+
+  <div class="post-grid" id="post-grid">
+
+
+    <article
+      class="post-card"
+      data-post-category="probiotics"
+    >
+
+      <span class="post-category-tag">
+        Probiotics
+      </span>
+
+      <h3>
+        Probiotics for Bloating — What the Evidence Actually Says
+      </h3>
+
+      <p>
+        We look at the evidence around probiotic strains and digestive
+        symptoms, and explain what shoppers should look for.
+      </p>
+
+      <div class="post-card-footer">
+
+        <span class="post-card-read-time">
+          8 min read
+        </span>
+
+        <a
+          href="posts/probiotics-for-bloating.html"
+          class="post-card-link"
+        >
+          Read →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="post-card"
+      data-post-category="prebiotics"
+    >
+
+      <span class="post-category-tag">
+        Prebiotics
+      </span>
+
+      <h3>
+        Prebiotic Fibre: Acacia, Inulin, PHGG and More
+      </h3>
+
+      <p>
+        A practical comparison of common fibre ingredients, including
+        how they differ and what to consider when choosing a product.
+      </p>
+
+      <div class="post-card-footer">
+
+        <span class="post-card-read-time">
+          9 min read
+        </span>
+
+        <a
+          href="posts/prebiotic-fibre-worth-taking.html"
+          class="post-card-link"
+        >
+          Read →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="post-card"
+      data-post-category="fermented-foods"
+    >
+
+      <span class="post-category-tag">
+        Fermented Foods
+      </span>
+
+      <h3>
+        Fermented Foods Worth Adding to Your Routine
+      </h3>
+
+      <p>
+        Kefir, kimchi, sauerkraut and other fermented foods — what
+        makes them different and how to use them practically.
+      </p>
+
+      <div class="post-card-footer">
+
+        <span class="post-card-read-time">
+          7 min read
+        </span>
+
+        <a
+          href="posts/fermented-foods-gut-health.html"
+          class="post-card-link"
+        >
+          Read →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="post-card"
+      data-post-category="gut-brain"
+    >
+
+      <span class="post-category-tag">
+        Gut-Brain
+      </span>
+
+      <h3>
+        The Gut-Brain Connection: What We Actually Know
+      </h3>
+
+      <p>
+        A straightforward look at the research connecting the digestive
+        system, microbiome and brain — without over-selling the science.
+      </p>
+
+      <div class="post-card-footer">
+
+        <span class="post-card-read-time">
+          9 min read
+        </span>
+
+        <a
+          href="posts/gut-brain-axis-supplements.html"
+          class="post-card-link"
+        >
+          Read →
+        </a>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <div
+    id="no-posts"
+    style="
+      display:none;
+      text-align:center;
+      padding:48px 20px;
+      border:2px dashed var(--border);
+      border-radius:16px;
+      color:var(--text-muted);
+      font-size:0.95rem;
+    "
+  >
+    No posts in that category yet — check back soon.
+  </div>
+
+</div>
+```
+
   </section>
+
+  <!-- =========================================================
+       WHY HAPPYGUTFUEL
+       ========================================================= -->
+
+  <section class="trust-section">
+
+```
+<div class="trust-inner">
+
+  <div class="trust-heading">
+
+    <span class="section-eyebrow">
+      OUR APPROACH
+    </span>
+
+    <h2>
+      Less hype.<br />
+      Better decisions.
+    </h2>
+
+  </div>
+
+
+  <div class="trust-grid">
+
+    <div class="trust-item">
+
+      <span class="trust-number">
+        01
+      </span>
+
+      <h3>
+        Evidence first
+      </h3>
+
+      <p>
+        We look at the quality of evidence rather than simply repeating
+        the claims printed on a product label.
+      </p>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <span class="trust-number">
+        02
+      </span>
+
+      <h3>
+        Product practicality
+      </h3>
+
+      <p>
+        Ingredients matter, but so do dose, convenience, taste,
+        formulation and whether a product is realistic to use.
+      </p>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <span class="trust-number">
+        03
+      </span>
+
+      <h3>
+        Commercially independent
+      </h3>
+
+      <p>
+        Affiliate relationships are disclosed. Being paid a commission
+        does not mean a product automatically gets recommended.
+      </p>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <span class="trust-number">
+        04
+      </span>
+
+      <h3>
+        No miracle promises
+      </h3>
+
+      <p>
+        Gut health is complicated. We would rather explain what is
+        known, what is uncertain and what is worth considering.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================================================
+       30-DAY LEAD MAGNET
+       ========================================================= -->
+
+  <section class="challenge-section">
+
+```
+<div class="challenge-inner">
+
+  <div class="challenge-copy">
+
+    <span class="meta-tag">
+      ✦ Free guide
+    </span>
+
+    <h2>
+      Try the 30-Day HappyGutFuel Challenge.
+    </h2>
+
+    <p>
+      A simple framework for improving everyday gut-friendly habits
+      without trying to completely overhaul your diet.
+    </p>
+
+    <ul>
+
+      <li>✓ Simple daily checklist</li>
+      <li>✓ Fibre-focused food ideas</li>
+      <li>✓ Fermented food prompts</li>
+      <li>✓ Progress tracker</li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="challenge-form-card" id="product-waitlist">
+
+    <h3>
+      Get the free challenge
+    </h3>
+
+    <p>
+      We'll send the guide straight to your inbox.
+    </p>
+
+    <form
+      class="homepage-newsletter-form"
+      onsubmit="handleSubscribe(event)"
+    >
+
+      <input
+        type="email"
+        placeholder="your@email.com"
+        aria-label="Email address"
+        required
+      />
+
+      <button type="submit">
+        Send Me the Guide →
+      </button>
+
+    </form>
+
+    <small>
+      You'll also hear when HappyGutFuel Daily becomes available.
+      Unsubscribe anytime.
+    </small>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =========================================================
+       NEWSLETTER
+       ========================================================= -->
 
   <section class="homepage-newsletter">
-    <div class="homepage-newsletter-inner">
-      <h2>No sponsored noise.</h2>
-      <p>New gut health recommendations when there's something genuinely worth sharing — not on a schedule, not to fill a content calendar. Just honest picks when we find them.</p>
-      <form class="homepage-newsletter-form" onsubmit="handleSubscribe(event)">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit">Get the Newsletter</button>
-      </form>
-    </div>
+
+```
+<div class="homepage-newsletter-inner">
+
+  <span class="section-eyebrow">
+    THE HAPPY GUTFUEL EDIT
+  </span>
+
+  <h2>
+    Useful gut-health stuff. Occasionally.
+  </h2>
+
+  <p>
+    New guides, genuinely interesting research and products worth
+    knowing about. No daily spam. No endless supplement pushing.
+  </p>
+
+  <form
+    class="homepage-newsletter-form"
+    onsubmit="handleSubscribe(event)"
+  >
+
+    <input
+      type="email"
+      placeholder="your@email.com"
+      aria-label="Email address"
+      required
+    />
+
+    <button type="submit">
+      Join Free →
+    </button>
+
+  </form>
+
+</div>
+```
+
   </section>
 
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
   <footer>
-    <div class="footer-inner">
-      <span>© 2026 HappyGutFuel. All rights reserved.</span>
-      <span>This site contains <strong>affiliate links</strong> — we earn a small commission if you buy, at no extra cost to you.</span>
+
+```
+<div class="footer-inner">
+
+  <div class="footer-brand">
+
+    <a href="index.html" class="logo">
+      HappyGut<span>Fuel</span>.
+    </a>
+
+    <p>
+      Better gut-health decisions, without the guesswork.
+    </p>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <div>
+
+      <strong>
+        Explore
+      </strong>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="shop.html">
+        Shop Picks
+      </a>
+
+      <a href="gut-check.html">
+        Gut Check
+      </a>
+
     </div>
+
+
+    <div>
+
+      <strong>
+        Learn
+      </strong>
+
+      <a href="probiotics.html">
+        Probiotics
+      </a>
+
+      <a href="prebiotics.html">
+        Prebiotics
+      </a>
+
+      <a href="fermented-foods.html">
+        Fermented Foods
+      </a>
+
+      <a href="gut-brain.html">
+        Gut-Brain
+      </a>
+
+    </div>
+
+
+    <div>
+
+      <strong>
+        Information
+      </strong>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="affiliate-disclosure.html">
+        Affiliate Disclosure
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+  <span>
+    © 2026 HappyGutFuel. All rights reserved.
+  </span>
+
+  <span>
+    Some links are affiliate links and may earn us a commission.
+  </span>
+
+</div>
+```
+
   </footer>
 
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+
   <script src="assets/js/main.js"></script>
+
 </body>
 </html>
