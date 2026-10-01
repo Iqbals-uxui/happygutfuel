@@ -2,10 +2,9 @@
    HappyGutFuel — homepage behaviour
    Save as: assets/js/home.js  (loaded AFTER main.js)
 
-   Covers three things the pasted homepage referenced but never
-   defined: the category filter, the signup forms, and the mobile
-   nav. It also provides a toggleTheme() fallback ONLY if main.js
-   doesn't already export one, so the two can't collide.
+   Three things: the category filter, the signup form, the mobile
+   nav. Plus a toggleTheme() fallback that only defines itself if
+   main.js hasn't already, so the two can't collide.
    ============================================================ */
 
 (function () {
@@ -13,7 +12,7 @@
 
   var THEME_KEY = 'hgf-theme'; // must match the inline script in index.html
 
-  /* ---------- 1. Theme (fallback only) ---------------------- */
+  /* ---------- theme (fallback only) ---------- */
 
   if (typeof window.toggleTheme !== 'function') {
     window.toggleTheme = function () {
@@ -24,7 +23,7 @@
     };
   }
 
-  /* ---------- 2. Mobile navigation -------------------------- */
+  /* ---------- mobile navigation ---------- */
 
   var navToggle = document.querySelector('.nav-toggle');
   var primaryNav = document.getElementById('primary-nav');
@@ -37,11 +36,11 @@
     });
   }
 
-  /* ---------- 3. Article category filter --------------------
-     Delegated: one listener on the pill list rather than an inline
-     onclick per button. Adding a fifth category later means adding
-     one <li> in the HTML and nothing here.
-     --------------------------------------------------------- */
+  /* ---------- article category filter ----------
+     One delegated listener on the pill list rather than an inline
+     onclick per button. Adding a category later means adding one
+     <li> to the HTML and nothing here.
+     --------------------------------------------- */
 
   var filterList = document.getElementById('post-filter');
   var emptyState = document.getElementById('no-posts');
@@ -61,8 +60,8 @@
 
     if (statusEl) {
       statusEl.textContent = visible === 1
-        ? '1 article shown'
-        : visible + ' articles shown';
+        ? '1 guide shown'
+        : visible + ' guides shown';
     }
   }
 
@@ -84,14 +83,13 @@
     });
   }
 
-  /* ---------- 4. Signup forms -------------------------------
-     Currently a front-end stub. Point FORM_ENDPOINT at your email
-     provider's hosted form action (Mailerlite, Kit, Beehiiv,
-     Buttondown all give you one) and switch SUBMIT_TO_ENDPOINT to
-     true. The data-signup-source attribute tells you which of the
-     two forms converted, which is the only way you'll learn whether
-     the challenge or the newsletter is pulling its weight.
-     --------------------------------------------------------- */
+  /* ---------- signup form ----------
+     Front-end stub for now. Point FORM_ENDPOINT at your email
+     provider's hosted form action (Mailerlite, Kit, Beehiiv and
+     Buttondown all give you one) and flip SUBMIT_TO_ENDPOINT to
+     true. data-signup-source is carried through so that when you
+     add a second form later you can tell them apart.
+     ---------------------------------- */
 
   var SUBMIT_TO_ENDPOINT = false;
   var FORM_ENDPOINT = ''; // e.g. 'https://assets.mailerlite.com/jsonp/XXXX/forms/YYYY/subscribe'
