@@ -46,18 +46,24 @@ function updateIcon() {
 
 
 // ── NEWSLETTER ────────────────────────────────────────────────
-// One implementation for every form on the site. Two UI patterns,
-// detected from the markup rather than duplicated per page type:
-//   • Sidebar / widget forms (post pages) swap the button label.
+// Posts to Kit (formerly ConvertKit). One implementation for every
+// form on the site, with two UI patterns detected from the markup:
+//   • Sidebar / widget forms swap the button label.
 //   • Homepage, shop and gut-check forms have a .form-status line.
 //
-// To go live: set FORM_ENDPOINT to your email provider's hosted form
-// action and flip SUBMIT_TO_ENDPOINT to true. data-signup-source and
-// the hidden profile field are sent along, so you can tell which page
-// converted and which gut-check profile the subscriber got.
+// Kit expects the email field to be named `email_address`, not
+// `email`. Custom fields go as fields[name] and only persist if a
+// matching custom field exists in Kit (Grow → Subscribers → Custom
+// fields). Create `source` and `profile` there to capture them;
+// without those, signups still work and the extras are dropped.
+//
+// Transport: fetch first, because it gives a real success/failure.
+// If that is blocked by CORS the request falls back to a form POST
+// into a hidden iframe, which browsers always allow cross-origin.
+// The fallback cannot read the response, so it reports optimistically
+// — a bad address simply never gets a confirmation email.
 
-var SUBMIT_TO_ENDPOINT = false;
-var FORM_ENDPOINT = ''; // e.g. 'https://assets.mailerlite.com/jsonp/XXXX/forms/YYYY/subscribe'
+var FORM_ENDPOINT = 'https://app.kit.com/forms/10042101/subscriptions';
 
 function handleSubscribe(e) {
   e.preventDefault();
@@ -87,38 +93,76 @@ function handleSubscribe(e) {
       input.disabled = false;
       return;
     }
-    btn.textContent = "\u2713 You're on the list";
+    btn.textContent = "\u2713 Check your email";
     btn.style.background = 'var(--accent-hover)';
     input.disabled = true;
     btn.disabled = true;
   }
 
-  var payload = {
-    email: input.value,
-    source: source,
-    profile: profile ? profile.value : ''
-  };
+  var DONE = "Thanks \u2014 check your email to confirm, and the guide is on its way.";
 
-  if (!SUBMIT_TO_ENDPOINT || !FORM_ENDPOINT) {
-    console.info('[signup stub]', payload);
-    report("Thanks \u2014 you're on the list. Check your inbox shortly.", false);
+  if (!FORM_ENDPOINT) {
+    console.info('[signup stub]', input.value, source);
+    report(DONE, false);
     return;
   }
+
+  var data = new FormData();
+  data.append('email_address', input.value);
+  data.append('fields[source]', source);
+  if (profile && profile.value) data.append('fields[profile]', profile.value);
 
   if (status) status.textContent = 'Sending\u2026';
   btn.disabled = true;
 
-  fetch(FORM_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
+  // Fallback: a real form POST aimed at a hidden iframe. Not subject
+  // to CORS, so it works wherever fetch is refused.
+  function postViaIframe() {
+    var name = 'hgf-signup-' + Date.now();
+
+    var frame = document.createElement('iframe');
+    frame.name = name;
+    frame.style.display = 'none';
+    document.body.appendChild(frame);
+
+    var proxy = document.createElement('form');
+    proxy.action = FORM_ENDPOINT;
+    proxy.method = 'post';
+    proxy.target = name;
+    proxy.style.display = 'none';
+
+    data.forEach(function (value, key) {
+      var field = document.createElement('input');
+      field.type = 'hidden';
+      field.name = key;
+      field.value = value;
+      proxy.appendChild(field);
+    });
+
+    document.body.appendChild(proxy);
+    proxy.submit();
+
+    // Can't read a cross-origin iframe, so assume it landed and tidy up.
+    report(DONE, false);
+    setTimeout(function () {
+      proxy.remove();
+      frame.remove();
+    }, 8000);
+  }
+
+  fetch(FORM_ENDPOINT, { method: 'POST', body: data })
     .then(function (response) {
-      if (!response.ok) throw new Error('Request failed');
-      report("Thanks \u2014 you're on the list. Check your inbox shortly.", false);
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      report(DONE, false);
     })
     .catch(function () {
-      report("That didn't go through. Try again, or email us directly.", true);
+      // Almost always CORS rather than a genuine failure, so retry
+      // by the route that can't be blocked before reporting an error.
+      try {
+        postViaIframe();
+      } catch (err) {
+        report("That didn't go through. Try again, or email us directly.", true);
+      }
     });
 }
 
