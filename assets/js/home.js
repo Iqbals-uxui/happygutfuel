@@ -24,50 +24,6 @@
   }
 
 
-  /* ── POST FILTER ──────────────────────────────────────────
-     One delegated listener on the pill list. main.js still has the
-     older setPostCategory() driven by inline onclick attributes;
-     this markup uses data-filter, so only one of them ever fires.
-     ──────────────────────────────────────────────────────── */
-
-  var filterList = document.getElementById('post-filter');
-  var emptyState = document.getElementById('no-posts');
-  var filterStatus = document.getElementById('filter-status');
-
-  function applyFilter(category) {
-    var cards = document.querySelectorAll('#post-listing [data-post-category]');
-    var visible = 0;
-
-    Array.prototype.forEach.call(cards, function (card) {
-      var match = category === 'all' ||
-                  card.getAttribute('data-post-category') === category;
-      card.hidden = !match;
-      if (match) visible++;
-    });
-
-    if (emptyState) emptyState.hidden = visible > 0;
-    if (filterStatus) {
-      filterStatus.textContent = visible === 1 ? '1 guide shown'
-                                               : visible + ' guides shown';
-    }
-  }
-
-  if (filterList) {
-    filterList.addEventListener('click', function (event) {
-      var button = event.target.closest('button[data-filter]');
-      if (!button) return;
-
-      Array.prototype.forEach.call(filterList.querySelectorAll('button'), function (b) {
-        var isActive = b === button;
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-pressed', String(isActive));
-      });
-
-      applyFilter(button.getAttribute('data-filter'));
-    });
-  }
-
-
   /* ── GUT CHECK ────────────────────────────────────────────
      Seven questions scored across five axes. No total, no numeric
      result shown to the user — the axes decide which of four
@@ -257,6 +213,55 @@
         answers = [];
       });
     }
+  }
+  /* ── MOBILE BUY BAR ───────────────────────────────────────
+     Shows the product currently in view once the first one has
+     scrolled past the top of the screen. Mobile only — desktop
+     already has a buy button in view.
+
+     IntersectionObserver rather than a scroll listener so it
+     doesn't fire on every pixel of scroll.
+     ──────────────────────────────────────────────────────── */
+
+  var bar = document.getElementById('buy-bar');
+  var products = document.querySelectorAll('.product-node[data-product]');
+
+  if (bar && products.length && 'IntersectionObserver' in window) {
+
+    var nameEl = document.getElementById('buy-bar-name');
+    var linkEl = document.getElementById('buy-bar-link');
+    var current = null;
+
+    function fill(node) {
+      if (node === current) { return; }
+      current = node;
+      var link = node.querySelector('.btn-affiliate');
+      var price = node.getAttribute('data-price');
+      nameEl.textContent = node.getAttribute('data-name') + (price ? ' — ' + price : '');
+      if (link) { linkEl.href = link.href; }
+    }
+
+    // Track which product occupies the middle of the viewport
+    var seen = new Map();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { seen.set(e.target, e.intersectionRatio); });
+
+      var best = null, bestRatio = 0;
+      seen.forEach(function (ratio, node) {
+        if (ratio > bestRatio) { bestRatio = ratio; best = node; }
+      });
+
+      if (best && bestRatio > 0.15) {
+        fill(best);
+        bar.hidden = false;
+        // next frame so the transform animates rather than jumping
+        requestAnimationFrame(function () { bar.classList.add('is-visible'); });
+      } else {
+        bar.classList.remove('is-visible');
+      }
+    }, { threshold: [0, 0.15, 0.4, 0.75, 1] });
+
+    Array.prototype.forEach.call(products, function (n) { io.observe(n); });
   }
 
 })();

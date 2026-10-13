@@ -4,24 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>HappyGutFuel — Better gut health, without the guesswork</title>
-  <meta name="description" content="Evidence-led gut health guides and honest product picks. Probiotics, prebiotic fibre, fermented foods and the gut-brain axis, explained plainly.">
+  <title>HappyGutFuel — gut health without the guesswork</title>
+  <meta name="description" content="Straight answers on probiotics, prebiotic fibre, bloating and recovering after antibiotics. Evidence-led picks, no hype.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://happygutfuel.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HappyGutFuel">
   <meta property="og:url" content="https://happygutfuel.com/">
-  <meta property="og:title" content="HappyGutFuel — Better gut health, without the guesswork">
-  <meta property="og:description" content="Evidence-led gut health guides and honest product picks. Probiotics, prebiotic fibre, fermented foods and the gut-brain axis, explained plainly.">
+  <meta property="og:title" content="HappyGutFuel — gut health without the guesswork">
+  <meta property="og:description" content="Straight answers on probiotics, prebiotic fibre, bloating and recovering after antibiotics. Evidence-led picks, no hype.">
   <meta name="twitter:card" content="summary">
 
   <meta name="theme-color" content="#f7f4ef">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!-- Theme before first paint. Matches main.js: light unless the visitor
-       has manually chosen dark. Do not add a prefers-color-scheme check
-       here or the two will fight and the page will flicker. -->
+  <!-- Theme before first paint. Matches main.js: light unless manually
+       set to dark. Do not add a prefers-color-scheme check here. -->
   <script>
     (function () {
       try {
@@ -45,8 +44,6 @@
 
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <a href="#main" class="skip-link">Skip to content</a>
-
   <div class="disclosure-banner">
     <strong>Affiliate disclosure:</strong>
     we may earn a commission when you buy through some of our links, at no extra
@@ -62,11 +59,10 @@
 
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
           <li><a href="probiotics.html">Probiotics</a></li>
-          <li><a href="prebiotics.html">Prebiotics</a></li>
-          <li><a href="fermented-foods.html">Fermented foods</a></li>
-          <li><a href="gut-brain.html">Gut-brain</a></li>
+          <li><a href="prebiotic-fibre.html">Fibre</a></li>
+          <li><a href="bloating.html">Bloating</a></li>
+          <li><a href="after-antibiotics.html">After antibiotics</a></li>
           <li><a href="shop.html">Shop picks</a></li>
         </ul>
       </nav>
@@ -87,156 +83,79 @@
 
     </div>
   </header>
-
   <main id="main">
 
-    <!-- ============================================================
-         1. HERO
-         ============================================================ -->
     <section class="site-hero">
       <div class="site-hero-inner">
-
         <h1>Make your gut health simpler.</h1>
-
         <p class="site-hero-lede">
-          Evidence-led guides and products worth considering &mdash; without the
-          hype, miracle claims or endless supplement stacks.
+          Four questions, four straight answers. No hype, no miracle claims, no
+          supplement stacks you will never keep up.
         </p>
-
-        <div class="hero-actions">
-          <a href="gut-check.html" class="btn-primary">Take the 60-second gut check</a>
-          <a href="#picks" class="text-link">Or see what we recommend</a>
-        </div>
-
+        <a href="gut-check.html" class="btn-primary">Not sure where to start? Take the 60-second check</a>
       </div>
     </section>
 
-    <!-- ============================================================
-         2. PICKS
-         ============================================================ -->
-    <section class="picks-section" id="picks" aria-labelledby="picks-title">
+    <!-- The homepage's only job is to route. Four doors, each one a page
+         that earns. No article grid, no filter pills, no reading. -->
+    <section class="routes-section" aria-labelledby="routes-title">
+      <h2 class="visually-hidden" id="routes-title">Choose what applies to you</h2>
+      <div class="route-grid">
 
-      <div class="section-header">
-        <h2 class="section-title" id="picks-title">What we recommend</h2>
-        <a href="shop.html" class="section-link">All picks and reasoning</a>
+        <a class="route-card" href="probiotics.html">
+          <span class="route-q">Where do I even start?</span>
+          <span class="route-h">Probiotics</span>
+          <span class="route-p">Which probiotic is worth the money, and how to read the label.</span>
+          <span class="route-go">3 picks &rarr;</span>
+        </a>
+
+        <a class="route-card" href="prebiotic-fibre.html">
+          <span class="route-q">Not getting enough fibre?</span>
+          <span class="route-h">Fibre</span>
+          <span class="route-p">Acacia, inulin and PHGG compared on tolerance and cost.</span>
+          <span class="route-go">3 picks &rarr;</span>
+        </a>
+
+        <a class="route-card" href="bloating.html">
+          <span class="route-q">Bloated most days?</span>
+          <span class="route-h">Bloating</span>
+          <span class="route-p">Three products, three different jobs. Picking the right one.</span>
+          <span class="route-go">3 picks &rarr;</span>
+        </a>
+
+        <a class="route-card" href="after-antibiotics.html">
+          <span class="route-q">Just finished a course?</span>
+          <span class="route-h">After antibiotics</span>
+          <span class="route-p">What to take during, what to take after, and the bit people skip.</span>
+          <span class="route-go">3 picks &rarr;</span>
+        </a>
       </div>
-
-      <div class="pick-grid">
-
-        <article class="pick-card">
-          <span class="pick-badge">Best overall</span>
-          <div class="pick-thumb" aria-hidden="true"><span>ProCombo</span></div>
-          <div class="pick-body">
-            <p class="pick-category">Probiotic + prebiotic</p>
-            <h3><a href="shop.html#procombo">ProCombo</a></h3>
-            <p class="pick-desc">
-              A DuoCap&trade; double capsule, so the probiotic and the prebiotic
-              fibre release at different stages rather than together.
-            </p>
-            <div class="pick-actions">
-              <a href="shop.html#procombo" class="btn-buy">See the detail</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pick-card">
-          <span class="pick-badge">Best to start with</span>
-          <div class="pick-thumb" aria-hidden="true"><span>Optibac</span></div>
-          <div class="pick-body">
-            <p class="pick-category">Probiotic</p>
-            <h3><a href="shop.html#optibac">Optibac Every Day</a></h3>
-            <p class="pick-desc">
-              Publishes full Rosell&reg; strain codes, which is what lets you
-              check a strain against the actual research.
-            </p>
-            <div class="pick-actions">
-              <a href="shop.html#optibac" class="btn-buy">See the detail</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="pick-card">
-          <span class="pick-badge">Most in one capsule</span>
-          <div class="pick-thumb" aria-hidden="true"><span>Bettervits</span></div>
-          <div class="pick-body">
-            <p class="pick-category">Probiotic + B12</p>
-            <h3><a href="shop.html#bettervits">Bettervits</a></h3>
-            <p class="pick-desc">
-              Ten strains plus chicory inulin and methylcobalamin B12. Good value
-              if you already buy a separate B12.
-            </p>
-            <div class="pick-actions">
-              <a href="shop.html#bettervits" class="btn-buy">See the detail</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="affiliate-note">
-        <strong>How we make money:</strong>
-        some links here are affiliate links. If you buy through one we may receive
-        a commission. It doesn&rsquo;t change your price, and it doesn&rsquo;t
-        decide whether a product appears.
-      </p>
-
     </section>
 
-    <!-- ============================================================
-         3. OWN PRODUCT — HappyGutFuel Daily
-
-         Below the picks on purpose: those are things a reader can buy
-         today, this is a thing that does not exist yet. Leading with
-         it would be selling a promise ahead of the finished work.
-
-         Its form is the only email capture on the homepage now. The
-         general list is captured at the end of the gut check, which
-         is a better moment to ask anyway.
-         ============================================================ -->
     <section class="daily-section" id="daily" aria-labelledby="daily-title">
       <div class="daily-inner">
-
         <div class="daily-copy">
-
           <p class="daily-status">In development &middot; not yet available</p>
-
           <h2 id="daily-title">We&rsquo;re making our own.</h2>
-
           <p class="daily-lede">
-            HappyGutFuel Daily is a daily fibre product we&rsquo;re developing with
-            a UK manufacturer. Most people don&rsquo;t fail at fibre because they
-            don&rsquo;t know it matters &mdash; they fail because the daily habit is
-            awkward.
+            HappyGutFuel Daily is a daily fibre product we&rsquo;re developing with a UK
+            manufacturer. Most people don&rsquo;t fail at fibre because they don&rsquo;t
+            know it matters &mdash; they fail because the daily habit is awkward.
           </p>
-
-          <ul class="daily-points">
-            <li>One daily serving, not a scoop-and-shaker routine</li>
-            <li>Full ingredient breakdown published before it goes on sale</li>
-          </ul>
-
           <p class="daily-honest">
-            No pre-order, no deposit, nothing to buy. When it launches it will be
-            marked as our own product everywhere it appears and won&rsquo;t quietly
-            replace something we currently recommend.
-            <a href="affiliate-disclosure.html">Our disclosure</a>.
+            No pre-order, nothing to buy. When it launches it will be marked as our own
+            product everywhere it appears and won&rsquo;t quietly replace something we
+            currently recommend. <a href="affiliate-disclosure.html">Our disclosure</a>.
           </p>
-
         </div>
-
         <div class="daily-card">
-
           <div class="daily-pack" aria-hidden="true">
             <span>HAPPY<br>GUT<br>FUEL</span>
             <strong>DAILY</strong>
             <small>FIBRE</small>
           </div>
-
-          <h3>Join the early-access list</h3>
-
-          <p>
-            We&rsquo;ll tell this list first, with the formulation and the price.
-          </p>
-
+          <h3>Early-access list</h3>
+          <p>Told first, with the formulation and the price.</p>
           <form class="signup-form" data-signup-source="daily-waitlist" onsubmit="handleSubscribe(event)">
             <label class="visually-hidden" for="daily-email">Email address</label>
             <input type="email" id="daily-email" name="email" autocomplete="email"
@@ -244,72 +163,17 @@
             <button type="submit">Notify me</button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
-
           <p class="daily-footnote">Product news only. Unsubscribe any time.</p>
-
         </div>
-
       </div>
     </section>
 
-    <!-- ============================================================
-         4. GUIDES
-
-         A plain list, not cards. The filter pills are gone: five
-         pills to filter five articles was interface for its own sake,
-         and four of the five are currently noindexed placeholders.
-         Bring the grid back when there are twenty of these.
-         ============================================================ -->
-    <section class="guides-section" aria-labelledby="guides-title">
-
-      <div class="section-header">
-        <h2 class="section-title" id="guides-title">The guides</h2>
-      </div>
-
-      <ul class="guide-list">
-
-        <li>
-          <a href="posts/best-probiotics-for-gut-health.html">
-            <span class="guide-cat">Probiotics</span>
-            <span class="guide-title">The probiotics actually worth taking</span>
-            <span class="guide-meta">10 min</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="posts/probiotics-for-bloating.html">
-            <span class="guide-cat">Probiotics</span>
-            <span class="guide-title">Probiotics for bloating &mdash; what the evidence says</span>
-            <span class="guide-meta">8 min</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="posts/prebiotic-fibre-worth-taking.html">
-            <span class="guide-cat">Prebiotics</span>
-            <span class="guide-title">Prebiotic fibre: acacia, inulin, PHGG and the rest</span>
-            <span class="guide-meta">9 min</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="posts/fermented-foods-gut-health.html">
-            <span class="guide-cat">Fermented</span>
-            <span class="guide-title">Fermented foods worth adding to your routine</span>
-            <span class="guide-meta">7 min</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="posts/gut-brain-axis-supplements.html">
-            <span class="guide-cat">Gut-brain</span>
-            <span class="guide-title">The gut-brain connection: what we actually know</span>
-            <span class="guide-meta">9 min</span>
-          </a>
-        </li>
-
+    <section class="articles-section" aria-labelledby="art-title">
+      <h2 class="section-title" id="art-title">Also worth reading</h2>
+      <ul class="article-list">
+          <li><a href="posts/fermented-foods-gut-health.html">Fermented foods worth eating</a></li>
+          <li><a href="posts/gut-brain-axis-supplements.html">The gut-brain connection</a></li>
       </ul>
-
     </section>
 
   </main>
@@ -326,19 +190,21 @@
         <div>
           <h2>Guides</h2>
           <a href="probiotics.html">Probiotics</a>
-          <a href="prebiotics.html">Prebiotics</a>
-          <a href="fermented-foods.html">Fermented foods</a>
-          <a href="gut-brain.html">Gut-brain</a>
+          <a href="prebiotic-fibre.html">Fibre</a>
+          <a href="bloating.html">Bloating</a>
+          <a href="after-antibiotics.html">After antibiotics</a>
+        </div>
+        <div>
+          <h2>More</h2>
+          <a href="shop.html">Shop picks</a>
+          <a href="gut-check.html">Gut check</a>
+          <a href="posts/fermented-foods-gut-health.html">Fermented foods worth eating</a>
+          <a href="posts/gut-brain-axis-supplements.html">The gut-brain connection</a>
         </div>
         <div>
           <h2>Site</h2>
-          <a href="shop.html">Shop picks</a>
-          <a href="gut-check.html">Gut check</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-        </div>
-        <div>
-          <h2>Legal</h2>
           <a href="affiliate-disclosure.html">Affiliate disclosure</a>
           <a href="privacy.html">Privacy</a>
         </div>
