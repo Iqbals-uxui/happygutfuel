@@ -1,0 +1,17 @@
+# Old URLs kept as 301s so nothing that is already linked or
+# indexed breaks. Netlify reads this file from the site root.
+
+/posts/best-probiotics-for-gut-health.html       /probiotics.html             301
+/posts/prebiotic-fibre-worth-taking.html         /prebiotic-fibre.html        301
+/posts/probiotics-for-bloating.html              /bloating.html               301
+/prebiotics.html                                 /prebiotic-fibre.html        301
+/fermented-foods.html                            /posts/fermented-foods-gut-health.html 301
+/gut-brain.html                                  /posts/gut-brain-axis-supplements.html 301
+/post-template.html                              /                            301
+
+# Pretty URLs without the extension
+/probiotics        /probiotics.html        301
+/fibre             /prebiotic-fibre.html   301
+/bloating          /bloating.html          301
+/after-antibiotics /after-antibiotics.html 301
+/shop              /shop.html              301
